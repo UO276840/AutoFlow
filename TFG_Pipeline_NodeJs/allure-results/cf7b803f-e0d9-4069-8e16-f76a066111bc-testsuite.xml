@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1729628541425' stop='1729628543985'>
+    <name>Todo Test </name>
+    <title>Todo Test </title>
+    <test-cases>
+        <test-case start='1729628541425' status='failed' stop='1729628543984'>
+            <name>Create Task and delete it</name>
+            <title>Create Task and delete it</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Failed to create session.
+                Requested environment is not available</message>
+                <stack-trace>Error: Failed to create session.
+                Requested environment is not available
+                    at startWebDriverSession (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\webdriver\build\utils.js:69:15)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at Function.newSession (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\webdriver\build\index.js:20:45)
+                    at remote (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\webdriverio\build\index.js:46:22)
+                    at Object.&lt;anonymous> (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\front.test.js:24:17)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

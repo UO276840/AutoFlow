@@ -1,0 +1,119 @@
+@Library('mi-libreria') _
+pipeline {
+    agent { label 'jenkins_agent'}
+    tools {
+        nodejs "nodejs"
+        dockerTool "docker"
+    }
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh "rm -rf node_modules"
+                    sh "npm cache clean --force"
+                    sh "npm install"
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    echo "No build needed"
+                }
+            }
+        }
+        stage('Dockerizar app') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh "docker-compose up --build -d"
+                    sh "docker start tfg_pipeline_nodejs-selenoid-1"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh "chmod +x node_modules/.bin/jest"
+                    sh "./node_modules/.bin/jest --forceExit --coverage ./tests/task.test.js"
+                    sh " npx mocha --no-timeouts ./tests/front.test.js"
+                }
+            }
+        }
+        stage('Reporting') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES'){
+                     generateReports("coverage/lcov-report", 'Jest Report', 'allure-report')
+                     }
+            }
+        }
+        stage('Sonar') {
+            steps {
+                sonarAnalysis("npm")
+            }
+        }
+        stage('Quality gate') {
+            steps {
+                sleep(10) // seconds
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+        stage('Generate ZIP') {
+            steps {
+                script {
+                    def zipScript = '''
+                        const fs = require('fs');
+                        const archiver = require('archiver');
+
+                        const output = fs.createWriteStream('myapp.zip');
+                        const archive = archiver('zip', { zlib: { level: 9 } });
+
+                        output.on('close', () => {
+                            console.log(`myapp.zip has been created. Total bytes: ${archive.pointer()}`);
+                        });
+
+                        archive.on('error', (err) => {
+                            throw err;
+                        });
+
+                        archive.pipe(output);
+                        archive.glob('**/*', { ignore: ['.git/**', 'myapp.zip'] });
+                        archive.finalize();
+                    '''
+                    writeFile file: 'zip.js', text: zipScript
+                    sh 'node zip.js'
+                }
+            }
+        }
+        stage('Deploy to Azure') {
+            steps {
+                withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
+                                            'AZURE_TENANT_ID=05ea74a3-92c5-4c31-978a-925c3c799cd0']) {
+                    script {
+                    sh "node -v"
+                    def resourceGroup = 'TFG'
+                    def webAppName = 'nodejstodo'
+                    def planName = 'ASP-TFG-a614'
+                        withCredentials([usernamePassword(credentialsId: 'Azure', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+                               sh '''
+                                  az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                                  az account set -s $AZURE_SUBSCRIPTION_ID
+                                  az webapp deployment source config-zip --name nodejstodo --resource-group TFG --src myapp.zip
+                                  az webapp browse --name nodejstodo --resource-group TFG
+                                '''
+                              }
+                         // Cerrar sesión en Azure CLI
+                         sh 'az logout'
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            cleanUp()
+            sh "docker stop tfg_pipeline_nodejs-selenoid-1"
+        }
+    }
+}

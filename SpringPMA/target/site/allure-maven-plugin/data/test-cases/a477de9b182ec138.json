@@ -1,0 +1,56 @@
+{
+  "uid" : "a477de9b182ec138",
+  "name" : "testCrearActualizarEliminarProducto()",
+  "fullName" : "com.example.TFG_Pipeline.view.ProductoViewTest.testCrearActualizarEliminarProducto",
+  "historyId" : "116e5b703911fb191bc24f7c18133ac1",
+  "time" : {
+    "start" : 1719066973137,
+    "stop" : 1719066981491,
+    "duration" : 8354
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-VCT9AKT"
+  }, {
+    "name" : "thread",
+    "value" : "19692@DESKTOP-VCT9AKT.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "com.example.TFG_Pipeline.view.ProductoViewTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.TFG_Pipeline.view.ProductoViewTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testCrearActualizarEliminarProducto"
+  }, {
+    "name" : "suite",
+    "value" : "com.example.TFG_Pipeline.view.ProductoViewTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a477de9b182ec138.json",
+  "parameterValues" : [ ]
+}

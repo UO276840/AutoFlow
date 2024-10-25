@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1719079016606' stop='1719079016609'>
+    <name>DELETE /tasks/:id</name>
+    <title>DELETE /tasks/:id</title>
+    <test-cases>
+        <test-case start='1719079016607' status='failed' stop='1719079016608'>
+            <name>should delete a task</name>
+            <title>should delete a task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>ReferenceError: url is not defined</message>
+                <stack-trace>ReferenceError: url is not defined
+                    at Object.url (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\task.test.js:14:32)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1719079016608' status='failed' stop='1719079016609'>
+            <name>should return 404 if task does not exist</name>
+            <title>should return 404 if task does not exist</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>ReferenceError: url is not defined</message>
+                <stack-trace>ReferenceError: url is not defined
+                    at Object.url (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\task.test.js:14:32)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

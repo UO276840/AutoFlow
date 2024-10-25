@@ -1,0 +1,85 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-VCT9AKT",
+    "children" : [ {
+      "name" : "19692@DESKTOP-VCT9AKT.main(1)",
+      "children" : [ {
+        "name" : "testCrearActualizarEliminarProducto()",
+        "uid" : "a477de9b182ec138",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973137,
+          "stop" : 1719066981491,
+          "duration" : 8354
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetSetPrecio()",
+        "uid" : "d444c10366591b32",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973121,
+          "stop" : 1719066973122,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetSetId()",
+        "uid" : "f7fdbe465b9f1eb5",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973104,
+          "stop" : 1719066973108,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crearActualizarProducto()",
+        "uid" : "f37cb89a974a13e",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973059,
+          "stop" : 1719066973085,
+          "duration" : 26
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crearEliminarProducto()",
+        "uid" : "c28d9b14299d68c7",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066970433,
+          "stop" : 1719066972997,
+          "duration" : 2564
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetSetNombre()",
+        "uid" : "67583d7ee827be90",
+        "parentUid" : "af2b0ea1ee6b6e1a4f02ed206d57227f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973113,
+          "stop" : 1719066973114,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "af2b0ea1ee6b6e1a4f02ed206d57227f"
+    } ],
+    "uid" : "3cfbfe21ac5c5ef83aaa5e6adc272c8f"
+  } ]
+}

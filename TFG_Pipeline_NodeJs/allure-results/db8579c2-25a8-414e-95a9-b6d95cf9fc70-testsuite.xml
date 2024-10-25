@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1719426526942' stop='1719426534393'>
+    <name>GET /tasks</name>
+    <title>GET /tasks</title>
+    <test-cases>
+        <test-case start='1719426526942' status='failed' stop='1719426534393'>
+            <name>should get all tasks</name>
+            <title>should get all tasks</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: Instance failed to start within 10000ms</message>
+                <stack-trace>Error: Instance failed to start within 10000ms
+                    at Timeout.&lt;anonymous> (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\mongodb-memory-server-core\src\util\MongoInstance.ts:381:21)
+                    at listOnTimeout (node:internal/timers:573:17)
+                    at processTimers (node:internal/timers:514:7)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

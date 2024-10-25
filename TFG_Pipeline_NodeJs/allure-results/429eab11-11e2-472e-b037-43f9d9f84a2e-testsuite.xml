@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1719079357241' stop='1719079357440'>
+    <name>DELETE /tasks/:id</name>
+    <title>DELETE /tasks/:id</title>
+    <test-cases>
+        <test-case start='1719079357241' status='passed' stop='1719079357422'>
+            <name>should delete a task</name>
+            <title>should delete a task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1719079357422' status='passed' stop='1719079357440'>
+            <name>should return 404 if task does not exist</name>
+            <title>should return 404 if task does not exist</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

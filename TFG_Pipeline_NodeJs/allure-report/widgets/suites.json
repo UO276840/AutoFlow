@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"0341026f3ac2f60654a88e5e801675a4","name":"DELETE /tasks/:id","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"98394992340f10606f965ca55242c6a1","name":"GET /tasks","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

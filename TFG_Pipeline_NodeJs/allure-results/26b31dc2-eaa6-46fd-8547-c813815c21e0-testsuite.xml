@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1729629344902' stop='1729629368959'>
+    <name>Todo Test </name>
+    <title>Todo Test </title>
+    <test-cases>
+        <test-case start='1729629344903' status='failed' stop='1729629368958'>
+            <name>Create Task and delete it</name>
+            <title>Create Task and delete it</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>WebDriverError: unknown error: net::ERR_NAME_NOT_RESOLVED
+                  (Session info: chrome=130.0.6723.58)</message>
+                <stack-trace>WebDriverError: unknown error: net::ERR_NAME_NOT_RESOLVED
+                  (Session info: chrome=130.0.6723.58)
+                    at Object.throwDecodedError (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\lib\error.js:521:15)
+                    at parseHttpResponse (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\lib\http.js:514:13)
+                    at Executor.execute (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\lib\http.js:446:28)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at Driver.execute (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\lib\webdriver.js:740:17)
+                    at Object.&lt;anonymous> (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\front.test.js:28:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

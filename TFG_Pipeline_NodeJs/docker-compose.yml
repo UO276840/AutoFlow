@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:8080"
+    links:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/TFGNodeJs
+    networks:
+      - selenoid
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - selenoid
+
+networks:
+  selenoid:
+    name: network_jenkins
+    external: true

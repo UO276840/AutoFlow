@@ -1,0 +1,56 @@
+{
+  "uid" : "d444c10366591b32",
+  "name" : "testGetSetPrecio()",
+  "fullName" : "com.example.TFG_Pipeline.model.ProductoTest.testGetSetPrecio",
+  "historyId" : "d5c9f81fbaec62b58f1cbe9def02721",
+  "time" : {
+    "start" : 1719066973121,
+    "stop" : 1719066973122,
+    "duration" : 1
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-VCT9AKT"
+  }, {
+    "name" : "thread",
+    "value" : "19692@DESKTOP-VCT9AKT.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "com.example.TFG_Pipeline.model.ProductoTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.TFG_Pipeline.model.ProductoTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testGetSetPrecio"
+  }, {
+    "name" : "suite",
+    "value" : "com.example.TFG_Pipeline.model.ProductoTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d444c10366591b32.json",
+  "parameterValues" : [ ]
+}

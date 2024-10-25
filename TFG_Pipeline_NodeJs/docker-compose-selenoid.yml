@@ -1,0 +1,38 @@
+services:
+  selenoid:
+    image: aerokube/selenoid:latest-release
+    ports:
+      - "4444:4444"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./config:/etc/selenoid"
+      - "./target:/output"
+      - "./target:/opt/selenoid/video"
+    command: ["-service-startup-timeout", "4m", "-session-attempt-timeout", "4m", "-video-output-dir", "/opt/selenoid/video", "-container-network", "network_jenkins"]
+    networks:
+      - selenoid
+  selenoid-ui:
+    image: aerokube/selenoid-ui:latest-release
+    links:
+      - selenoid
+    ports:
+      - "8070:8080"
+    command: ["--selenoid-uri", "http://selenoid:4444"]
+    networks:
+      - selenoid
+  chrome_80.0:
+    image: "selenoid/vnc:chrome_80.0"
+    links:
+      - selenoid
+      - selenoid-ui
+    depends_on:
+      - selenoid
+      - selenoid-ui
+    networks:
+      - selenoid
+    volumes:
+      - "/dev/shm:/dev/shm"
+networks:
+  selenoid:
+    name: network_jenkins
+    external: true

@@ -1,0 +1,15 @@
+services:
+  appspring:
+    image: appspring
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    networks:
+      - selenoid
+
+networks:
+  selenoid:
+    name: network_jenkins
+    external: true

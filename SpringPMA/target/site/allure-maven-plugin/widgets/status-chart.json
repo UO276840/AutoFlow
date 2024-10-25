@@ -1,0 +1,61 @@
+[ {
+  "uid" : "a477de9b182ec138",
+  "name" : "testCrearActualizarEliminarProducto()",
+  "time" : {
+    "start" : 1719066973137,
+    "stop" : 1719066981491,
+    "duration" : 8354
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d444c10366591b32",
+  "name" : "testGetSetPrecio()",
+  "time" : {
+    "start" : 1719066973121,
+    "stop" : 1719066973122,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f7fdbe465b9f1eb5",
+  "name" : "testGetSetId()",
+  "time" : {
+    "start" : 1719066973104,
+    "stop" : 1719066973108,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f37cb89a974a13e",
+  "name" : "crearActualizarProducto()",
+  "time" : {
+    "start" : 1719066973059,
+    "stop" : 1719066973085,
+    "duration" : 26
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c28d9b14299d68c7",
+  "name" : "crearEliminarProducto()",
+  "time" : {
+    "start" : 1719066970433,
+    "stop" : 1719066972997,
+    "duration" : 2564
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "67583d7ee827be90",
+  "name" : "testGetSetNombre()",
+  "time" : {
+    "start" : 1719066973113,
+    "stop" : 1719066973114,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

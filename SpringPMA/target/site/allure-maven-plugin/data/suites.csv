@@ -1,0 +1,7 @@
+"Status","Name","Duration in ms","Description"
+"passed","com.example.TFG_Pipeline.view.ProductoViewTest.testCrearActualizarEliminarProducto","8354",""
+"passed","com.example.TFG_Pipeline.model.ProductoTest.testGetSetPrecio","1",""
+"passed","com.example.TFG_Pipeline.model.ProductoTest.testGetSetId","4",""
+"passed","com.example.TFG_Pipeline.controller.ProductoControllerTest.crearActualizarProducto","26",""
+"passed","com.example.TFG_Pipeline.controller.ProductoControllerTest.crearEliminarProducto","2564",""
+"passed","com.example.TFG_Pipeline.model.ProductoTest.testGetSetNombre","1",""

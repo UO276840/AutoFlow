@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1719079016591' stop='1719079016597'>
+    <name>GET /tasks</name>
+    <title>GET /tasks</title>
+    <test-cases>
+        <test-case start='1719079016592' status='failed' stop='1719079016596'>
+            <name>should get all tasks</name>
+            <title>should get all tasks</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>ReferenceError: url is not defined</message>
+                <stack-trace>ReferenceError: url is not defined
+                    at Object.url (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\task.test.js:14:32)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

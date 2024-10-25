@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1729629524258' stop='1729629524266'>
+    <name>Todo Test </name>
+    <title>Todo Test </title>
+    <test-cases>
+        <test-case start='1729629524259' status='failed' stop='1729629524265'>
+            <name>Create Task and delete it</name>
+            <title>Create Task and delete it</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Target browser must be a string, but is &lt;undefined>; did you forget to call forBrowser()?</message>
+                <stack-trace>TypeError: Target browser must be a string, but is &lt;undefined>; did you forget to call forBrowser()?
+                    at Builder.build (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\index.js:611:13)
+                    at Object.build (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\front.test.js:25:50)
+                    at Object.asyncJestTest (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:125:37)
+                    at C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:41:12
+                    at new Promise (&lt;anonymous>)
+                    at mapper (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+                    at C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:68:41
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

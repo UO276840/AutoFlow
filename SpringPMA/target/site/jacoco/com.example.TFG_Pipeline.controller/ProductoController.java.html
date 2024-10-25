@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductoController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TFG_Pipeline</a> &gt; <a href="index.source.html" class="el_package">com.example.TFG_Pipeline.controller</a> &gt; <span class="el_source">ProductoController.java</span></div><h1>ProductoController.java</h1><pre class="source lang-java linenums">package com.example.TFG_Pipeline.controller;
+
+import com.example.TFG_Pipeline.model.Producto;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+<span class="fc" id="L12">public class ProductoController {</span>
+
+<span class="fc" id="L14">    private final List&lt;Producto&gt; productos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L15">    private long idActual = 1;</span>
+
+    @GetMapping(&quot;/productos&quot;)
+    public String obtenerProductos(Model model) {
+<span class="fc" id="L19">        model.addAttribute(&quot;productos&quot;, productos);</span>
+<span class="fc" id="L20">        return &quot;productos/productos&quot;;</span>
+    }
+
+    @GetMapping(&quot;/productos/{id}&quot;)
+    public String obtenerProductoPorId(@PathVariable Long id, Model model) {
+<span class="fc" id="L25">        Producto productoEncontrado = productos.stream()</span>
+<span class="fc" id="L26">                .filter(producto -&gt; producto.getId().equals(id))</span>
+<span class="fc" id="L27">                .findFirst()</span>
+<span class="fc" id="L28">                .orElse(null);</span>
+<span class="fc" id="L29">        model.addAttribute(&quot;producto&quot;, productoEncontrado);</span>
+<span class="fc" id="L30">        return &quot;productos/producto&quot;; // Producto encontrado, devuelve 200 OK</span>
+    }
+
+    @RequestMapping(value = &quot;/productos/nuevo&quot;, method = RequestMethod.GET)
+    public String mostrarFormularioNuevoProducto(Model model) {
+<span class="nc" id="L35">        model.addAttribute(&quot;producto&quot;, new Producto());</span>
+<span class="nc" id="L36">        return &quot;productos/nuevo&quot;;</span>
+    }
+
+    @RequestMapping(value = &quot;/productos/nuevo&quot;, method = RequestMethod.POST)
+    public String crearProducto(@ModelAttribute Producto nuevoProducto) {
+<span class="fc" id="L41">        nuevoProducto.setId(idActual++);</span>
+<span class="fc" id="L42">        productos.add(nuevoProducto);</span>
+<span class="fc" id="L43">        return &quot;redirect:/productos&quot;;</span>
+    }
+
+    @RequestMapping(value=&quot;/productos/editar/{id}&quot;, method = RequestMethod.GET)
+    public String mostrarFormularioEditarProducto(@PathVariable Long id, Model model) {
+<span class="nc" id="L48">        Producto productoEncontrado = productos.stream()</span>
+<span class="nc" id="L49">                .filter(producto -&gt; producto.getId().equals(id))</span>
+<span class="nc" id="L50">                .findFirst()</span>
+<span class="nc" id="L51">                .orElse(null);;</span>
+<span class="nc" id="L52">        model.addAttribute(&quot;producto&quot;, productoEncontrado);</span>
+<span class="nc" id="L53">        return &quot;productos/editar&quot;;</span>
+    }
+
+    @RequestMapping(value = &quot;/productos/editar/{id}&quot;, method = RequestMethod.POST)
+    public String actualizarProducto(@PathVariable Long id, Producto productoActualizado) {
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        for (int i = 0; i &lt; productos.size(); i++) {</span>
+<span class="fc" id="L59">            Producto producto = productos.get(i);</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">            if (producto.getId().equals(id)) {</span>
+<span class="fc" id="L61">                producto.setNombre(productoActualizado.getNombre());</span>
+<span class="fc" id="L62">                producto.setPrecio(productoActualizado.getPrecio());</span>
+<span class="fc" id="L63">                return &quot;redirect:/productos&quot;;</span>
+            }
+        }
+<span class="nc" id="L66">        return null;</span>
+    }
+
+    @GetMapping(&quot;/productos/eliminar/{id}&quot;)
+    public String eliminarProducto(@PathVariable Long id) {
+<span class="fc" id="L71">        productos.removeIf(producto -&gt; producto.getId().equals(id));</span>
+<span class="fc" id="L72">        return &quot;redirect:/productos&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

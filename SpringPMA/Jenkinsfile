@@ -1,0 +1,106 @@
+@Library('mi-libreria') _
+pipeline{
+    agent {label 'jenkins_agent'}
+    environment {
+    AZURE_CREDENTIALS = credentials('Azure')
+    }
+    tools {
+            // Install the Maven version configured as "M3" and add it to the path.
+            maven "MAVEN_HOME"
+            allure "allure"
+        }
+    stages{
+        stage('Build'){
+            steps {
+                timeout(time: 5, unit: 'MINUTES'){
+                    sh "mvn -DskipTests clean package"
+                }
+            }
+        }
+        stage('Dockerizar app') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh "docker-compose up --build -d"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES'){
+                    sh "mvn clean install"
+                }
+            }
+        }
+        stage('Reporting') {
+                    steps {
+                        timeout(time: 5, unit: 'MINUTES'){
+                            sh "mvn allure:report"
+                            generateReports("target/site/jacoco", 'JaCoCo Report', 'target/allure-results')
+                         }
+                    }
+                }
+        stage('Sonar') {
+            steps {
+                sonarAnalysis("mvn")
+            }
+        }
+        stage('Quality gate') {
+            steps {
+                sleep(10) // seconds
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+       stage('Deploy to Azure') {
+            steps {
+                /*withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
+                                            'AZURE_TENANT_ID=05ea74a3-92c5-4c31-978a-925c3c799cd0']) {
+                    script {
+                    def resourceGroup = 'TFG'
+                    def webAppName = 'tfgSpring'
+                        withCredentials([usernamePassword(credentialsId: 'Azure', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+                               sh '''
+                                  az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                                  az account set -s $AZURE_SUBSCRIPTION_ID
+                                '''
+                              }
+                         // Obtener perfiles de publicación
+                         sh "az extension add --name spring --upgrade"
+
+                         // Subir el paquete
+                         //sh "curl -T target/TFG_Pipeline-0.0.1-SNAPSHOT.jar $publishUrl/webapps/ROOT.jar -u '$username:$password'"
+                         sh "az spring app deploy --name $webAppName --service springservicetfg -g $resourceGroup --artifact-path target/TFG_Pipeline-0.0.1-SNAPSHOT.jar"
+                         sh "az spring app list --service springservicetfg -g $resourceGroup --output table"
+                         // Cerrar sesión en Azure CLI
+                         sh 'az logout'
+                    }
+                }*/
+                sh "echo deploy"
+            }
+        }
+    }
+    post {
+        success {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                channel: '#general',
+                                message: '🎉 ¡La build fue exitosa!'
+        }
+        failure {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                            channel: '#general',
+                                            message: '¡La build ha fallado!'
+        }
+        unstable {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                            channel: '#general',
+                                            message: '¡La build es inestable!'
+        }
+        always {
+            cleanUp()
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                    channel: '#tfg',
+                                    message: '¡La build ha finalizado!'
+        }
+    }
+}

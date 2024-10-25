@@ -1,0 +1,93 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.example.TFG_Pipeline",
+    "children" : [ {
+      "name" : "controller.ProductoControllerTest",
+      "children" : [ {
+        "name" : "crearEliminarProducto",
+        "uid" : "c28d9b14299d68c7",
+        "parentUid" : "b3a4cdea9e19d1353c6777d2cc375335",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066970433,
+          "stop" : 1719066972997,
+          "duration" : 2564
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crearActualizarProducto",
+        "uid" : "f37cb89a974a13e",
+        "parentUid" : "b3a4cdea9e19d1353c6777d2cc375335",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973059,
+          "stop" : 1719066973085,
+          "duration" : 26
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "controller.ProductoControllerTest"
+    }, {
+      "name" : "model.ProductoTest",
+      "children" : [ {
+        "name" : "testGetSetId",
+        "uid" : "f7fdbe465b9f1eb5",
+        "parentUid" : "1d4fc2967e604d510987c4c96ceedae3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973104,
+          "stop" : 1719066973108,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetSetNombre",
+        "uid" : "67583d7ee827be90",
+        "parentUid" : "1d4fc2967e604d510987c4c96ceedae3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973113,
+          "stop" : 1719066973114,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetSetPrecio",
+        "uid" : "d444c10366591b32",
+        "parentUid" : "1d4fc2967e604d510987c4c96ceedae3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973121,
+          "stop" : 1719066973122,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "model.ProductoTest"
+    }, {
+      "name" : "view.ProductoViewTest",
+      "children" : [ {
+        "name" : "testCrearActualizarEliminarProducto",
+        "uid" : "a477de9b182ec138",
+        "parentUid" : "da509cf1a634f7ab2f361311d3fc5101",
+        "status" : "passed",
+        "time" : {
+          "start" : 1719066973137,
+          "stop" : 1719066981491,
+          "duration" : 8354
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "view.ProductoViewTest"
+    } ],
+    "uid" : "com.example.TFG_Pipeline"
+  } ]
+}

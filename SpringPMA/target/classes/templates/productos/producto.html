@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Producto</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+</head>
+<body>
+<h1>Detalles del Producto</h1>
+<p>ID: <span th:text="${producto.id}">ID</span></p>
+<p>Nombre: <span th:text="${producto.nombre}">Nombre</span></p>
+<p>Precio: <span th:text="${producto.precio}">Precio</span></p>
+<a class="btn btn-secondary" href="/productos">Volver a la lista</a>
+</body>
+</html>

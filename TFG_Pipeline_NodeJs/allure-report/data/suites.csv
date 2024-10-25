@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Jun 22 20:02:37 CEST 2024","Sat Jun 22 20:02:37 CEST 2024","181","","DELETE /tasks/:id","","DELETE /tasks/:id","should delete a task","should delete a task",""
+"passed","Sat Jun 22 20:02:37 CEST 2024","Sat Jun 22 20:02:37 CEST 2024","18","","DELETE /tasks/:id","","DELETE /tasks/:id","should return 404 if task does not exist","should return 404 if task does not exist",""
+"passed","Sat Jun 22 20:02:36 CEST 2024","Sat Jun 22 20:02:37 CEST 2024","567","","GET /tasks","","GET /tasks","should get all tasks","should get all tasks",""

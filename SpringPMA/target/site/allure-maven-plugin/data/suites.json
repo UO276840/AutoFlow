@@ -1,0 +1,89 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "com.example.TFG_Pipeline.controller.ProductoControllerTest",
+    "children" : [ {
+      "name" : "crearEliminarProducto()",
+      "uid" : "c28d9b14299d68c7",
+      "parentUid" : "9eddc66bd7b981c9a265691f5068fa99",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066970433,
+        "stop" : 1719066972997,
+        "duration" : 2564
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "crearActualizarProducto()",
+      "uid" : "f37cb89a974a13e",
+      "parentUid" : "9eddc66bd7b981c9a265691f5068fa99",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066973059,
+        "stop" : 1719066973085,
+        "duration" : 26
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9eddc66bd7b981c9a265691f5068fa99"
+  }, {
+    "name" : "com.example.TFG_Pipeline.model.ProductoTest",
+    "children" : [ {
+      "name" : "testGetSetId()",
+      "uid" : "f7fdbe465b9f1eb5",
+      "parentUid" : "4c8d5b937f8429cdfbbaf23f37010fb8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066973104,
+        "stop" : 1719066973108,
+        "duration" : 4
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testGetSetNombre()",
+      "uid" : "67583d7ee827be90",
+      "parentUid" : "4c8d5b937f8429cdfbbaf23f37010fb8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066973113,
+        "stop" : 1719066973114,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testGetSetPrecio()",
+      "uid" : "d444c10366591b32",
+      "parentUid" : "4c8d5b937f8429cdfbbaf23f37010fb8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066973121,
+        "stop" : 1719066973122,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4c8d5b937f8429cdfbbaf23f37010fb8"
+  }, {
+    "name" : "com.example.TFG_Pipeline.view.ProductoViewTest",
+    "children" : [ {
+      "name" : "testCrearActualizarEliminarProducto()",
+      "uid" : "a477de9b182ec138",
+      "parentUid" : "dbc8e1d6d41ac4b28aaa10bfa9bc3f27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1719066973137,
+        "stop" : 1719066981491,
+        "duration" : 8354
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "dbc8e1d6d41ac4b28aaa10bfa9bc3f27"
+  } ]
+}

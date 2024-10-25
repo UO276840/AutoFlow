@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" id="conatiner">
+    <h2>Todo List</h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for element in data %}
+            <tr>
+                <td name="{{element.todoTask}}">{{ element.todoTask }}</td>
+                <td name="{{element.todoTask}}"><a href="/todo/delete/{{ element._id }}" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="/todo" method="POST">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="todoTask" placeholder="Enter Task">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

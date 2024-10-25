@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Producto</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+</head>
+<body>
+<h1>Editar Producto</h1>
+<form th:object="${producto}" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" th:field="*{nombre}" />
+    <br/>
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" th:field="*{precio}" />
+    <br/>
+    <button type="submit">Actualizar</button>
+</form>
+<a class="btn btn-secondary" href="/productos">Volver a la lista</a>
+</body>
+</html>

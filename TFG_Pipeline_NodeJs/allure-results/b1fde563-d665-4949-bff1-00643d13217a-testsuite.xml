@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1729629571331' stop='1729629571337'>
+    <name>Todo Test </name>
+    <title>Todo Test </title>
+    <test-cases>
+        <test-case start='1729629571331' status='failed' stop='1729629571336'>
+            <name>Create Task and delete it</name>
+            <title>Create Task and delete it</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>TypeError: Capability keys must be strings: object</message>
+                <stack-trace>TypeError: Capability keys must be strings: object
+                    at Capabilities.set (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\lib\capabilities.js:365:13)
+                    at Builder.setCapability (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\selenium-webdriver\index.js:350:24)
+                    at Object.setCapability (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\tests\front.test.js:25:43)
+                    at Object.asyncJestTest (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:125:37)
+                    at C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:41:12
+                    at new Promise (&lt;anonymous>)
+                    at mapper (C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+                    at C:\Users\Pedro\IdeaProjects\TFG_Pipeline_NodeJs\node_modules\jest-jasmine2\build\queueRunner.js:68:41
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
