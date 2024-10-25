@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaOnline", "TiendaOnline.csproj", "{F6BFE112-1F17-4B8E-B56E-C70DC5B5F791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTiendaOnline", "..\TestTiendaOnline\TestTiendaOnline.csproj", "{CC510848-3BD2-4F54-A175-F20D91F605C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6BFE112-1F17-4B8E-B56E-C70DC5B5F791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BFE112-1F17-4B8E-B56E-C70DC5B5F791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BFE112-1F17-4B8E-B56E-C70DC5B5F791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BFE112-1F17-4B8E-B56E-C70DC5B5F791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC510848-3BD2-4F54-A175-F20D91F605C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC510848-3BD2-4F54-A175-F20D91F605C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC510848-3BD2-4F54-A175-F20D91F605C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC510848-3BD2-4F54-A175-F20D91F605C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBD35E9C-AFD2-4A57-A5AC-CC1B07DE97DB}
+	EndGlobalSection
+EndGlobal
