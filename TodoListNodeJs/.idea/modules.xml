@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TFG_Pipeline_NodeJs.iml" filepath="$PROJECT_DIR$/.idea/TFG_Pipeline_NodeJs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ToDoListNodeJs.iml" filepath="$PROJECT_DIR$/.idea/ToDoListNodeJs.iml" />
     </modules>
   </component>
 </project>

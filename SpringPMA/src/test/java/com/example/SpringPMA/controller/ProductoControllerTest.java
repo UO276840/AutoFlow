@@ -2,7 +2,6 @@ package com.example.SpringPMA.controller;
 
 import com.example.SpringPMA.SpringPMAApplication;
 import com.example.SpringPMA.model.Producto;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,6 @@ public class ProductoControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    ObjectMapper objectMapper;
 
     @Test
     public void crearActualizarProducto() throws Exception {
@@ -34,9 +31,7 @@ public class ProductoControllerTest {
         producto.setNombre("ProductoExistente");
         producto.setPrecio(20.0);
 
-        String productoJson = objectMapper.writeValueAsString(producto);
-
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/productos/nuevo")
+        mockMvc.perform(MockMvcRequestBuilders.post("/productos/nuevo")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .param("nombre", producto.getNombre())
                         .param("precio", String.valueOf(producto.getPrecio())))
@@ -83,9 +78,7 @@ public class ProductoControllerTest {
         producto.setNombre("ProductoAEliminar");
         producto.setPrecio(15.0);
 
-        String productoJson = objectMapper.writeValueAsString(producto);
-
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/productos/nuevo")
+        mockMvc.perform(MockMvcRequestBuilders.post("/productos/nuevo")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .param("nombre", producto.getNombre())
                         .param("precio", String.valueOf(producto.getPrecio())))
