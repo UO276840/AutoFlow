@@ -9,11 +9,12 @@ namespace TiendaOnline.Data
 {
     public class MvcMovieContext : DbContext
     {
+        public MvcMovieContext() : base() { }
         public MvcMovieContext (DbContextOptions<MvcMovieContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Movie> Movie { get; set; } = default!;
+        public virtual DbSet<Movie> Movie { get; set; } = default!;
     }
 }
