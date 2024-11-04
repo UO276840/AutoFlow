@@ -9,7 +9,7 @@ using Humanizer.Localisation;
 
 namespace TestTiendaOnline
 {
-    public class UnitTest1
+    public class UnitTest
     {
         [Fact]
         public async Task IndexTest()
