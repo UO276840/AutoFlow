@@ -51,7 +51,7 @@ namespace TestTiendaOnline
         }
 
         [Fact]
-        public async Task Index_ReturnsAViewResult_WithAListOfMovies()
+        public async Task IndexControllerTest()
         {
             var client = GetClientWithInMemoryDb();
             var response = await client.GetAsync("/Movies/Index");
@@ -61,7 +61,7 @@ namespace TestTiendaOnline
         }
 
         [Fact]
-        public async Task Get_Details_ReturnsSuccessAndCorrectContent()
+        public async Task GetDetailsControllerTest()
         {
             var client = GetClientWithInMemoryDb();
 
@@ -72,7 +72,7 @@ namespace TestTiendaOnline
             Assert.Contains("Test Movie 1", responseString);
         }
         [Fact]
-        public async Task Post_Edit_UpdatesMovie()
+        public async Task PostEditControllerTest()
         {
             var client = GetClientWithInMemoryDb();
 
