@@ -1,18 +1,13 @@
 const app = require('../app');
-const { MongoMemoryServer } = require ("mongodb-memory-server");
 const {MongoClient} = require("mongodb");
 const {mongoose} = require("mongoose");
 const url = 'mongodb+srv://uo276840:2V8WlrqMWQK6Ry6d@todolist.1vrvjwl.mongodb.net/?retryWrites=true&w=majority&appName=ToDoList'
 const request = require('supertest');
-const {ObjectId} = require("mongodb");
 
 let conn= null;
 
-let m;
 
-// Antes de cada prueba, conectamos a una base de datos temporal en memoria
 beforeAll(async () => {
-    m = await MongoMemoryServer.create();
     conn = MongoClient.connect(url,{});
 },30000);
 
@@ -30,7 +25,7 @@ afterAll( async () => {
     })
 });
 
-describe('GET /tasks', () => {
+describe('GET /todo', () => {
     test('should get all tasks', async () => {
         const taskData = { todoTask: 'Task 1' };
         await request(app)
@@ -43,7 +38,7 @@ describe('GET /tasks', () => {
     });
 });
 
-describe('DELETE /tasks/:id', () => {
+describe('DELETE /todo/:id', () => {
     test('should delete a task', async () => {
         // Creamos una tarea de prueba en la base de datos
         const nonExistentTaskId = new mongoose.Types.ObjectId();
