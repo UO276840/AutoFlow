@@ -32,8 +32,13 @@ pipeline {
             steps {
                 timeout(time: 10, unit: 'MINUTES') {
                     script {
-                        sh 'dotnet build --configuration Release ./TiendaOnline'
-                        sh 'dotnet build --configuration Release ./TestTiendaOnline'
+                        def buildOutput = sh(script: 'dotnet build ./TiendaOnline --configuration Release', returnStdout: true).trim()
+                        def buildOutputTest = sh(script: 'dotnet build ./TestTiendaOnline --configuration Release', returnStdout: true).trim()
+
+                        if (buildOutput.contains("warning") || buildOutputTest.contains("warning")) {  
+                            echo "⚠ Se encontraron warnings en la compilación. Marcando UNSTABLE."
+                            currentBuild.result = 'UNSTABLE'
+                        } 
 
                     }
                 }
@@ -61,14 +66,17 @@ pipeline {
         }
         stage('Sonar') {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    withSonarQubeEnv('sonarqube') {
-                        script {
-                            def scannerHome = tool 'SonaScanner.NetCore'
-                            sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"TFG_NET\""
-                            sh 'dotnet build ./TiendaOnline'
-                            sh 'dotnet build ./TestTiendaOnline'
-                            sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+                dir('TiendaOnline') {
+                    timeout(time: 10, unit: 'MINUTES') {
+                        withSonarQubeEnv('sonarqube') {
+                            script {
+                                def scannerHome = tool 'SonaScanner.NetCore'
+                                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"TFG_NET\" /d:sonar.cs.opencover.reportsPaths=../TestTiendaOnline/TestResults/coverage.opencover.xml"
+                                sh 'dotnet build'
+                                sh 'dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/coverage.opencover.xml /p:CoverletOutputFormat=opencover'
+                                sh 'cat ../TestTiendaOnline/TestResults/coverage.opencover.xml'
+                                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+                        }
                         }
                     }
                 }
@@ -77,7 +85,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 sleep(10) // seconds
-                timeout(time: 2, unit: 'MINUTES') {
+                timeout(time: 4, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
@@ -131,8 +139,21 @@ pipeline {
     }
     post {
         always {
-            sh 'docker-compose -f docker-compose.yml down'
-            cleanWs()       
+            script{
+                timeout(time: 5, unit: 'MINUTES'){
+                            sh "cp ./TestTiendaOnline/TestResults/* allure-results"
+                            allure([
+                            results: [[path: "./TestTiendaOnline/TestResults"]],
+                            reportBuildPolicy: 'ALWAYS'
+                            ])
+                        }
+                node('principal'){
+                    script {
+                        sh 'docker-compose -f docker-compose.yml down'
+                        cleanWs()
+                    }
+                }
+            }
         }
     }
 }

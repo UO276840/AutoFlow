@@ -6,11 +6,23 @@ using TiendaOnline.Data;
 using TiendaOnline.Models;
 using Moq.EntityFrameworkCore;
 using Humanizer.Localisation;
+using Allure.Net.Commons;
+using Allure.Xunit.Attributes;
+using Xunit;
+
 
 namespace TestTiendaOnline
 {
+
+    [AllureSuite("CalculatorTests")]
+
     public class UnitTest
     {
+        [AllureTag("CI")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("8911")]
+        [AllureOwner("Anton")]
+        [AllureSubSuite("Add")]
         [Fact]
         public async Task IndexTest()
         {

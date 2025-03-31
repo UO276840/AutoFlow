@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1737652117259' stop='1737652117519'>
+    <name>DELETE /todo/:id</name>
+    <title>DELETE /todo/:id</title>
+    <test-cases>
+        <test-case start='1737652117259' status='failed' stop='1737652117261'>
+            <name>should delete a task</name>
+            <title>should delete a task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Error: querySrv ENOTFOUND _mongodb._tcp.todolist.1vrvjwl.mongodb.net</message>
+                <stack-trace>Error: querySrv ENOTFOUND _mongodb._tcp.todolist.1vrvjwl.mongodb.net
+                    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1737652117261' status='passed' stop='1737652117519'>
+            <name>should return 404 if task does not exist</name>
+            <title>should return 404 if task does not exist</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

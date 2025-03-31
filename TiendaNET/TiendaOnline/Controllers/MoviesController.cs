@@ -32,7 +32,7 @@ namespace TiendaOnline.Controllers
                                             orderby m.Genre
                                             select m.Genre;
             var movies = from m in _context.Movie
-                        select m;
+                         select m;
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -67,6 +67,12 @@ namespace TiendaOnline.Controllers
             {
                 return NotFound();
             }
+
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+
 
             return View(movie);
         }
@@ -106,6 +112,13 @@ namespace TiendaOnline.Controllers
             {
                 return NotFound();
             }
+
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+
+
             return View(movie);
         }
 
@@ -159,6 +172,11 @@ namespace TiendaOnline.Controllers
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+
             return View(movie);
         }
 
@@ -172,6 +190,11 @@ namespace TiendaOnline.Controllers
             {
                 _context.Movie.Remove(movie);
             }
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

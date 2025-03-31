@@ -6,22 +6,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>true</IsPackable>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <IsTestProject>false</IsTestProject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Pedro\.nuget\packages\allure.net.commons\2.12.1\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Update="web.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <PackageReference Include="Allure.Net.Commons" Version="2.12.1" />
-    <PackageReference Include="Allure.Xunit" Version="2.12.1" />
     <PackageReference Include="cldrjs" Version="0.5.1" />
-    <PackageReference Include="coverlet.msbuild" Version="6.0.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="jquery-globalize" Version="1.4.2" />
     <PackageReference Include="jQuery.Validation.Globalize" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -35,10 +34,19 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="ReportGenerator" Version="5.3.6" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.5.0.109200">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="TestTiendaOnline" />
   </ItemGroup>
-  
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
+
 
 </Project>

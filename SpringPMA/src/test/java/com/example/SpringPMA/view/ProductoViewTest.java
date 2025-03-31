@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductoViewTest {
@@ -56,10 +55,9 @@ public class ProductoViewTest {
     }
 
     @Test
-    public void testCrearActualizarEliminarProducto() throws InterruptedException {
+    public void testCrearProducto() throws InterruptedException {
         driver.get("http://appspring:8090/productos/nuevo");
 
-        // Crear un producto para eliminar
         WebElement nombreInput = driver.findElement(By.name("nombre"));
         WebElement precioInput = driver.findElement(By.name("precio"));
         WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
@@ -69,22 +67,23 @@ public class ProductoViewTest {
         precioInput.sendKeys("20.0");
         submitButton.click();
 
-        // Navegar a la página de edición del producto recién creado
         assertEquals("http://appspring:8090/productos", driver.getCurrentUrl());
 
-        // Verificar que el producto aparece en la lista
         WebElement productosTable = driver.findElement(By.id("productos-table"));
         assertTrue(productosTable.getText().contains("NuevoProducto"));
+    }
 
-        //Buscamos el boton para editar el producto
+    @Test
+    public void testActualizarProducto() throws InterruptedException {
+        driver.get("http://appspring:8090/productos");
+
         WebElement editLink = driver.findElement(By.linkText("Editar"));
         editLink.click();
-        submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
 
-        nombreInput = driver.findElement(By.name("nombre"));
-        precioInput = driver.findElement(By.name("precio"));
+        WebElement nombreInput = driver.findElement(By.name("nombre"));
+        WebElement precioInput = driver.findElement(By.name("precio"));
+        WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
 
-        //Editamos el producto
         nombreInput.clear();
         nombreInput.sendKeys("ProductoAEliminar");
         precioInput.clear();
@@ -93,19 +92,20 @@ public class ProductoViewTest {
 
         assertEquals("http://appspring:8090/productos", driver.getCurrentUrl());
 
-        // Verificar que el producto aparece en la lista
-        productosTable = driver.findElement(By.id("productos-table"));
+        WebElement productosTable = driver.findElement(By.id("productos-table"));
         assertTrue(productosTable.getText().contains("ProductoAEliminar"));
+    }
 
-        // Eliminar el producto recién creado
+    @Test
+    public void testEliminarProducto() throws InterruptedException {
+        driver.get("http://appspring:8090/productos");
+
         WebElement deleteLink = driver.findElement(By.linkText("Eliminar"));
         deleteLink.click();
 
-        // Verificar redirección a /view/productos
         assertEquals("http://appspring:8090/productos", driver.getCurrentUrl());
 
-        // Verificar que el producto no aparece en la lista
-        productosTable = driver.findElement(By.id("productos-table"));
+        WebElement productosTable = driver.findElement(By.id("productos-table"));
         assertFalse(productosTable.getText().contains("ProductoAEliminar"));
     }
 }

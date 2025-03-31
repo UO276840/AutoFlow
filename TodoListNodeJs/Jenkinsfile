@@ -8,87 +8,129 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    sh "rm -rf node_modules"
-                    sh "npm cache clean --force"
-                    sh "npm install"
+                script {
+                    try{
+                        timeout(time: 5, unit: 'MINUTES') {
+                            sh "rm -rf node_modules"
+                            sh "npm cache clean --force"
+                            sh "npm install"
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Install Dependencies"
+                         throw e
+                    }
                 }
             }
         }
         stage('Build') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    echo "No build needed"
+                script {
+                    try {
+                        def eslintWarnings = sh(script: 'npx eslint . --max-warnings=0', returnStatus: true)
+
+                        if (eslintWarnings != 0) {
+                            echo "⚠ ESLint encontró advertencias. Marcando como UNSTABLE."
+                            currentBuild.result = 'UNSTABLE'
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Build"
+                         throw e
+                    }
                 }
             }
         }
         stage('Dockerizar app') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    sh "docker-compose up --build -d"
-                    sh "docker start tfg_pipeline_nodejs-selenoid-1"
+                script {
+                    try{
+                        timeout(time: 5, unit: 'MINUTES') {
+                            sh "docker-compose up --build -d"
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Dockerizar app"
+                         throw e
+                    }
                 }
             }
         }
         stage('Test') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    sh "chmod +x node_modules/.bin/jest"
-                    sh "./node_modules/.bin/jest --forceExit --coverage ./tests/task.test.js"
-                    sh " npx mocha --no-timeouts ./tests/front.test.js"
+                script {
+                    try {
+                        timeout(time: 5, unit: 'MINUTES') {
+                            sh "chmod +x node_modules/.bin/jest"
+                            sh " npx nyc mocha --reporter mocha-allure-reporter --no-timeouts --exit ./tests/*"
+
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Test"
+                         throw e
+                    }
                 }
-            }
-        }
-        stage('Reporting') {
-            steps {
-                timeout(time: 5, unit: 'MINUTES'){
-                     generateReports("coverage/lcov-report", 'Jest Report', 'allure-report')
-                     }
             }
         }
         stage('Sonar') {
             steps {
-                sonarAnalysis("npm")
+                script {
+                    try {
+                        sonarAnalysis("npm")
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Sonar"
+                         throw e
+                    }
+                }
             }
         }
         stage('Quality gate') {
             steps {
-                sleep(10) // seconds
-                timeout(time: 2, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
+                script {
+                    try{
+                        sleep(10) // seconds
+                        timeout(time: 5, unit: 'MINUTES') {
+                            waitForQualityGate abortPipeline: true
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Quality gate"
+                         throw e
+                    }
                 }
             }
         }
         stage('Generate ZIP') {
             steps {
                 script {
-                    def zipScript = '''
-                        const fs = require('fs');
-                        const archiver = require('archiver');
+                    try {
+                        def zipScript = '''
+                            const fs = require('fs');
+                            const archiver = require('archiver');
 
-                        const output = fs.createWriteStream('myapp.zip');
-                        const archive = archiver('zip', { zlib: { level: 9 } });
+                            const output = fs.createWriteStream('myapp.zip');
+                            const archive = archiver('zip', { zlib: { level: 9 } });
 
-                        output.on('close', () => {
-                            console.log(`myapp.zip has been created. Total bytes: ${archive.pointer()}`);
-                        });
+                            output.on('close', () => {
+                                console.log(`myapp.zip has been created. Total bytes: ${archive.pointer()}`);
+                            });
 
-                        archive.on('error', (err) => {
-                            throw err;
-                        });
+                            archive.on('error', (err) => {
+                                throw err;
+                            });
 
-                        archive.pipe(output);
-                        archive.glob('**/*', { ignore: ['.git/**', 'myapp.zip'] });
-                        archive.finalize();
-                    '''
-                    writeFile file: 'zip.js', text: zipScript
-                    sh 'node zip.js'
+                            archive.pipe(output);
+                            archive.glob('**/*', { ignore: ['.git/**', 'myapp.zip'] });
+                            archive.finalize();
+                        '''
+                        writeFile file: 'zip.js', text: zipScript
+                        sh 'node zip.js'
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Generate ZIP"
+                         throw e
+                    }
                 }
             }
         }
         stage('Deploy to Azure') {
             steps {
-                withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
+                /*withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
                                             'AZURE_TENANT_ID=05ea74a3-92c5-4c31-978a-925c3c799cd0']) {
                     script {
                     sh "node -v"
@@ -106,12 +148,23 @@ pipeline {
                          // Cerrar sesión en Azure CLI
                          sh 'az logout'
                     }
-                }
+
+                }*/
+                                     sh "echo Deployment"
             }
         }
     }
     post {
+        failure {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                            channel: '#tfg',
+                                            message: "¡La pipeline ha fallado en el stage: *${failedStage}*"
+        }
         always {
+            timeout(time: 5, unit: 'MINUTES') {
+                sh 'npm run report'
+                generateReports("allure-report", 'Test Report', 'allure-results')
+            }
             cleanUp()
             sh "docker stop tfg_pipeline_nodejs-selenoid-1"
         }

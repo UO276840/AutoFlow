@@ -12,49 +12,89 @@ pipeline{
     stages{
         stage('Build'){
             steps {
-                timeout(time: 5, unit: 'MINUTES'){
-                    sh "mvn -DskipTests clean package"
+                script {
+                    try{
+                        timeout(time: 5, unit: 'MINUTES'){
+                            sh "mvn -DskipTests clean package"
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Build"
+                         throw e
+                    }
                 }
             }
         }
         stage('Dockerizar app') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    sh "docker-compose up --build -d"
+                script {
+                    try {
+                        timeout(time: 5, unit: 'MINUTES') {
+                            sh "docker-compose up --build -d"
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Dockerizar app"
+                         throw e
+                    }
                 }
             }
         }
         stage('Test') {
             steps {
-                timeout(time: 5, unit: 'MINUTES'){
-                    sh "mvn clean install"
+                script {
+                    try {
+                        timeout(time: 5, unit: 'MINUTES'){
+                            sh "mvn clean install"
+                        }
+                    } catch (Exception e) {
+                        currentBuild.result = 'UNSTABLE'
+                    }
                 }
             }
         }
         stage('Reporting') {
-                    steps {
+            steps {
+                script {
+                    try {
                         timeout(time: 5, unit: 'MINUTES'){
                             sh "mvn allure:report"
                             generateReports("target/site/jacoco", 'JaCoCo Report', 'target/allure-results')
                          }
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Reporting"
+                        throw e
                     }
                 }
+            }
+        }
         stage('Sonar') {
             steps {
-                sonarAnalysis("mvn")
+                script {
+                    try {
+                        sonarAnalysis("mvn")
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Sonar"
+                        throw e
+                    }
+                }
             }
         }
         stage('Quality gate') {
             steps {
-                sleep(10) // seconds
-                timeout(time: 2, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
+                script {
+                    try {
+                        sleep(10) // seconds
+                        timeout(time: 2, unit: 'MINUTES') {
+                            waitForQualityGate abortPipeline: true
+                        }
+                    } catch (Exception e) {
+                        currentBuild.result = 'UNSTABLE'
+                    }
                 }
             }
         }
        stage('Deploy to Azure') {
             steps {
-                /*withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
+                withEnv(['AZURE_SUBSCRIPTION_ID=7f2d989c-2cfa-45c8-944c-328deee9629a',
                                             'AZURE_TENANT_ID=05ea74a3-92c5-4c31-978a-925c3c799cd0']) {
                     script {
                     def resourceGroup = 'TFG'
@@ -75,25 +115,24 @@ pipeline{
                          // Cerrar sesión en Azure CLI
                          sh 'az logout'
                     }
-                }*/
-                sh "echo deploy"
+                }
             }
         }
     }
     post {
         success {
             simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
-                                channel: '#general',
+                                channel: '#tfg',
                                 message: '🎉 ¡La build fue exitosa!'
         }
         failure {
             simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
-                                            channel: '#general',
-                                            message: '¡La build ha fallado!'
+                                            channel: '#tfg',
+                                            message: "La pipeline ha fallado en el stage: *${env.FAILED_STAGE}*"
         }
         unstable {
             simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
-                                            channel: '#general',
+                                            channel: '#tfg',
                                             message: '¡La build es inestable!'
         }
         always {

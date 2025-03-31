@@ -32,6 +32,12 @@
         "image": "selenoid/vnc:chrome_80.0",
         "port": "4444",
         "path": "/"
+      },
+      "128.0_VNC": {
+        "image": "selenoid/vnc_chrome:128.0",
+        "port": "4444",
+        "path": "/",
+        "tmpfs": {"/tmp": "size=512m"}
       }
     }
   }

@@ -56,7 +56,7 @@ services:
           cpus: "6.0"
           memory: "6GB"
   sonarqube:
-    image: sonarqube:9.9.3-community
+    image: sonarqube:25.1.0.102122-community
     depends_on:
       - db
     ports:
