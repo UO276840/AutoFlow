@@ -19,11 +19,29 @@ services:
         limits:
           cpus: "4.0"
           memory: "4GB"
-  agent:
-    image: dockeragent
+  agentNode:
+    image: dockernodeagent
     privileged: true
     user: root
-    container_name: agent
+    container_name: agentNode
+    networks:
+      - backend
+    expose:
+      - 22
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQy+abZWh1ZLU370of/0/n8KkptPDbty7wbyAKlj6mmPQ6Nbv4CiTyi7mMLlaOIFqR4g4py8+uNbSGjyBY4Heu8tSU9CjjRGFWsAI2FwuiVdZJ188pii/ZoCkXD3IlPdqFxDPb+Z9PiXi/dtOjf1xfwSCswpGXDwptvp9DXk9RPYifJzCZ9eLmI5qQTRKoKmzKBmvCT6weQyLCzqtUsqBVXRZbZABS14VjxIKmlBye89G3EOJh1eE3C40najBPD5eIm7ZY4e8oUdQ/dPT+4noId6po5+kcLFr3KRRiwNkwADaMa1JJ6RtGXv9+ck5z0+1p4GRJSejHWhtdV3m7724A0sfdfTBpTwVsPiTN0kqNQ4mvUWEPIWWhp3UD6Y9aHQ0d4USmKTUIztRNOk7YgdkBaX7hGNQO+uZCo6CuUcT1FBhNBIyFs+/J4GcTX14NFF3jx9fuF75AfQrNMviB3x0QIizD4Av9z+Vn0rt/+bSDSDT9X1ZlZsF1S/wjI3CGkbc= pedro@DESKTOP-VCT9AKT
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      resources:
+        limits:
+          cpus: "6.0"
+          memory: "6GB"
+  agentSpring:
+    image: dockerspringagent
+    privileged: true
+    user: root
+    container_name: agentSpring
     networks:
       - backend
     expose:
