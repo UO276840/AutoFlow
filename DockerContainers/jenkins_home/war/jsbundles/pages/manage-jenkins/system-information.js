@@ -1,5 +1,4 @@
 /******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
 const imageWidth = document.getElementById("main-panel").offsetWidth - 30;
 const imageHeight = 500;
 const graphHost = document.querySelector("#graph-host");

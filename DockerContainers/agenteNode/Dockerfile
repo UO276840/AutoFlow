@@ -3,7 +3,6 @@ FROM jenkins/ssh-agent:bullseye-jdk17
 # Instala Docker
 USER root
 
-RUN chmod g+rw /var/run/docker.sock
 RUN groupadd docker || true && usermod -aG docker jenkins
 RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common && \

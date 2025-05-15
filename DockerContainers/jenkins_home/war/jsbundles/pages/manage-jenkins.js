@@ -1,5 +1,4 @@
 /******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
 const searchBarInput = document.querySelector("#settings-search-bar");
 searchBarInput.suggestions = function () {
   return Array.from(document.querySelectorAll(".jenkins-section__item")).map(item => ({

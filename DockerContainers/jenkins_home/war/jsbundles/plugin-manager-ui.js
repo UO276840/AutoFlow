@@ -1,26 +1,26 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2206:
+/***/ 268:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
 
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/lodash-npm-4.17.21-6382451519-10c0.zip/node_modules/lodash/debounce.js
-var debounce = __webpack_require__(5955);
+// EXTERNAL MODULE: ./node_modules/lodash/debounce.js
+var debounce = __webpack_require__(8221);
 var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
 // EXTERNAL MODULE: ./src/main/js/templates/plugin-manager/available.hbs
-var available = __webpack_require__(6979);
+var available = __webpack_require__(1322);
 var available_default = /*#__PURE__*/__webpack_require__.n(available);
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/jquery-npm-3.7.1-eeeac0f21e-10c0.zip/node_modules/jquery/dist/jquery.js
-var jquery = __webpack_require__(2910);
+// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+var jquery = __webpack_require__(4692);
 var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/window-handle-npm-1.0.1-369b8e9cbe-10c0.zip/node_modules/window-handle/index.js
-var window_handle = __webpack_require__(4903);
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/handlebars-npm-4.7.8-25244c2c82-10c0.zip/node_modules/handlebars/runtime.js
-var runtime = __webpack_require__(3921);
+// EXTERNAL MODULE: ./node_modules/window-handle/index.js
+var window_handle = __webpack_require__(7450);
+// EXTERNAL MODULE: ./node_modules/handlebars/runtime.js
+var runtime = __webpack_require__(3633);
 var runtime_default = /*#__PURE__*/__webpack_require__.n(runtime);
-;// CONCATENATED MODULE: ./src/main/js/util/jenkins.js
+;// ./src/main/js/util/jenkins.js
 /**
  * Jenkins JS Modules common utility functions
  */
@@ -250,7 +250,7 @@ jenkins.staplerPost = function (url, $form, success, options) {
   }, options));
 };
 /* harmony default export */ var util_jenkins = (jenkins);
-;// CONCATENATED MODULE: ./src/main/js/api/pluginManager.js
+;// ./src/main/js/api/pluginManager.js
 /**
  * Provides a wrapper to interact with the plugin manager & update center
  */
@@ -564,7 +564,7 @@ pluginManager.restartJenkins = function (handler) {
   });
 };
 /* harmony default export */ var api_pluginManager = (pluginManager);
-;// CONCATENATED MODULE: ./src/main/js/plugin-manager-ui.js
+;// ./src/main/js/plugin-manager-ui.js
 
 
 
@@ -650,10 +650,10 @@ function updateInstallButtonState() {
 
 /***/ }),
 
-/***/ 6979:
+/***/ 1322:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -744,7 +744,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "                <div class=\"alert alert-danger\">\n                    "
+  return "                <div class=\"jenkins-alert jenkins-alert-danger\">\n                    "
     + ((stack1 = container.lambda((depth0 != null ? lookupProperty(depth0,"newerCoreRequired") : depth0), depth0)) != null ? stack1 : "")
     + "\n                </div>\n";
 },"11":function(container,depth0,helpers,partials,data) {
@@ -755,7 +755,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "                <div class=\"alert alert-danger\">\n                    "
+  return "                <div class=\"jenkins-alert jenkins-alert-danger\">\n                    "
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"unresolvedSecurityWarnings") : depth0)) != null ? lookupProperty(stack1,"text") : stack1), depth0))
     + "\n                    <ul>\n"
     + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? lookupProperty(depth0,"unresolvedSecurityWarnings") : depth0)) != null ? lookupProperty(stack1,"warnings") : stack1),{"name":"each","hash":{},"fn":container.program(12, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":42,"column":24},"end":{"line":48,"column":33}}})) != null ? stack1 : "")
@@ -781,7 +781,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "                <div class=\"alert alert-warning\">\n                    "
+  return "                <div class=\"jenkins-alert jenkins-alert-warning\">\n                    "
     + ((stack1 = container.lambda((depth0 != null ? lookupProperty(depth0,"deprecated") : depth0), depth0)) != null ? stack1 : "")
     + "\n                </div>\n";
 },"16":function(container,depth0,helpers,partials,data) {
@@ -792,7 +792,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "                <div class=\"alert alert-warning\">\n                    "
+  return "                <div class=\"jenkins-alert jenkins-alert-warning\">\n                    "
     + ((stack1 = container.lambda((depth0 != null ? lookupProperty(depth0,"adoptMe") : depth0), depth0)) != null ? stack1 : "")
     + "\n                </div>\n";
 },"18":function(container,depth0,helpers,partials,data) {
@@ -1000,7 +1000,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [96], function() { return __webpack_require__(2206); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [96], function() { return __webpack_require__(268); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

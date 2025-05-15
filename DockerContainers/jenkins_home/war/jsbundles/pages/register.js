@@ -1,13 +1,12 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-var __webpack_exports__ = {};
 
-;// CONCATENATED MODULE: ./src/main/js/util/i18n.js
+;// ./src/main/js/util/i18n.js
 function getI18n(text) {
   const i18n = document.querySelector("#i18n");
   return i18n.getAttribute("data-" + text);
 }
-;// CONCATENATED MODULE: ./src/main/js/pages/register/index.js
+;// ./src/main/js/pages/register/index.js
 
 const passwordField = document.querySelector("#password1");
 const password2Field = document.querySelector("#password2");

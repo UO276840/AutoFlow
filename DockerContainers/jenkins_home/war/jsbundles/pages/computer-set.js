@@ -1,8 +1,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-var __webpack_exports__ = {};
 
-;// CONCATENATED MODULE: ./src/main/js/util/dom.js
+;// ./src/main/js/util/dom.js
 function createElementFromHtml(html) {
   const template = document.createElement("template");
   template.innerHTML = html.trim();
@@ -11,7 +10,7 @@ function createElementFromHtml(html) {
 function toId(string) {
   return string.trim().replace(/[\W_]+/g, "-").toLowerCase();
 }
-;// CONCATENATED MODULE: ./src/main/js/pages/computer-set/index.js
+;// ./src/main/js/pages/computer-set/index.js
 
 document.querySelector("#button-computer-icon-legend").addEventListener("click", () => {
   const template = document.querySelector("#template-computer-icon-legend");

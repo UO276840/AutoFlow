@@ -1,5 +1,4 @@
 /******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
 // Converts a page's section headings into clickable tabs, see 'About Jenkins' page for example
 const tabPanes = document.querySelectorAll(".jenkins-tab-pane");
 const content = document.querySelector("#main-panel");

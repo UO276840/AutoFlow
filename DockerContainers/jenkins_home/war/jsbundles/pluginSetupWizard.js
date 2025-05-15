@@ -1,7 +1,89 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6600:
+/***/ 1377:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_label") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel security-panel\">\n        <iframe src=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":6,"column":21},"end":{"line":6,"column":32}}}) : helper)))
+    + "/setupWizard/proxy-configuration\"></iframe>\n    </div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link install-home\">\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_goBack") : stack1), depth0))
+    + "\n    </button>\n    <button type=\"button\" class=\"btn btn-primary save-proxy-config\" disabled>\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_save") : stack1), depth0))
+    + "\n    </button>\n</div>\n";
+},"useData":true});
+
+/***/ }),
+
+/***/ 1627:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "		<div class=\"selected-plugin "
+    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":12,"column":30},"end":{"line":12,"column":47}}}) : helper)))
+    + "\" data-name=\""
+    + alias4(__default(__webpack_require__(3255)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":12,"column":60},"end":{"line":12,"column":71}}}))
+    + "\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":12,"column":73},"end":{"line":12,"column":82}}}) : helper)))
+    + "</div>\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"jumbotron welcome-panel success-panel\">\n		<h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_banner") : stack1), depth0))
+    + "</h1>\n		<p>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_message") : stack1), depth0))
+    + "</p>\n	</div>\n\n	<div class=\"selected-plugin-progress success-panel\">\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":11,"column":2},"end":{"line":13,"column":11}}})) != null ? stack1 : "")
+    + "	</div>\n</div>\n<div class=\"modal-footer\">\n	<button type=\"button\" class=\"btn btn-link install-home\">\n		"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_goBack") : stack1), depth0))
+    + "\n	</button>\n	<button type=\"button\" class=\"btn btn-primary resume-installation\">\n		"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_resumeInstallationButtonLabel") : stack1), depth0))
+    + "\n	</button>\n</div>";
+},"useData":true});
+
+/***/ }),
+
+/***/ 2959:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"loader\"></div>\n";
+},"useData":true});
+
+/***/ }),
+
+/***/ 3255:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,20 +97,167 @@ function id(str) {
 
 /***/ }),
 
-/***/ 8567:
+/***/ 4356:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "        <p>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_pluginInstallFailure_message") : stack1), depth0))
+    + "</p>\n        <button type=\"button\" class=\"btn btn-primary retry-failed-plugins\">\n            "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
+    + "\n        </button>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "        <div class=\"selected-plugin "
+    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":18,"column":36},"end":{"line":18,"column":53}}}) : helper)))
+    + "\" data-name=\""
+    + alias4(__default(__webpack_require__(3255)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":18,"column":66},"end":{"line":18,"column":77}}}))
+    + "\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":18,"column":79},"end":{"line":18,"column":88}}}) : helper)))
+    + "</div>\n";
+},"5":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "    <button type=\"button\" class=\"btn btn-link continue-with-failed-plugins\">\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_continue") : stack1), depth0))
+    + "\n    </button>\n    <button type=\"button\" class=\"btn btn-primary retry-failed-plugins\">\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
+    + "\n    </button>\n";
+},"7":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "    <button type=\"button\" class=\"btn btn-primary continue-with-failed-plugins\">\n        "
+    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_continue") : stack1), depth0))
+    + "\n    </button>\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel success-panel\">\n        <h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_pluginInstallFailure_title") : stack1), depth0))
+    + "</h1>\n\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias3,(depth0 != null ? lookupProperty(depth0,"failedPlugins") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":8,"column":8},"end":{"line":13,"column":15}}})) != null ? stack1 : "")
+    + "    </div>\n\n    <div class=\"selected-plugin-progress success-panel\">\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias3,(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":17,"column":8},"end":{"line":19,"column":17}}})) != null ? stack1 : "")
+    + "    </div>\n</div>\n<div class=\"modal-footer\">\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias3,(depth0 != null ? lookupProperty(depth0,"failedPlugins") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":23,"column":4},"end":{"line":34,"column":11}}})) != null ? stack1 : "")
+    + "</div>\n";
+},"useData":true});
+
+/***/ }),
+
+/***/ 4980:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {}), alias4=container.hooks.helperMissing, alias5="function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_addFirstUser_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"jumbotron welcome-panel security-panel\">\n		"
+    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"message") || (depth0 != null ? lookupProperty(depth0,"message") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"message","hash":{},"data":data,"loc":{"start":{"line":6,"column":2},"end":{"line":6,"column":15}}}) : helper))) != null ? stack1 : "")
+    + "\n\n		<iframe src=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":8,"column":15},"end":{"line":8,"column":26}}}) : helper)))
+    + "/setupWizard/setupWizardConfigureInstance\" id=\"setup-configure-instance\"></iframe>\n	</div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link skip-configure-instance\" disabled>\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipConfigureInstance") : stack1), depth0))
+    + "\n    </button>\n	<button type=\"button\" class=\"btn btn-primary save-configure-instance\" disabled>\n		"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_saveConfigureInstance") : stack1), depth0))
+    + "\n	</button>\n</div>\n";
+},"useData":true});
+
+/***/ }),
+
+/***/ 5141:
+/***/ (function() {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 5415:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"modal-header closeable\">\n	<h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body setup-wizard-heading\">\n  <div class=\"jumbotron welcome-panel\">\n		 <h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_banner") : stack1), depth0))
+    + "</h1>\n	<p>\n			"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_message") : stack1), depth0))
+    + "\n		</p>\n		<p class=\"button-set\">\n			<a class=\"btn btn-primary btn-lg btn-huge install-recommended\" href=\"#\" role=\"button\">\n				<b>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_recommendedActionTitle") : stack1), depth0))
+    + "</b>\n				<sub>\n					"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_recommendedActionDetails") : stack1), depth0))
+    + "\n				</sub>\n			</a>\n\n			<a class=\"btn btn-default btn-lg btn-huge install-custom\" href=\"#\" role=\"button\">\n				<b>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_customizeActionTitle") : stack1), depth0))
+    + "</b>\n				<sub>\n					"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_customizeActionDetails") : stack1), depth0))
+    + "\n				</sub>\n			</a>\n		</p>\n	</div>\n\n</div>\n";
+},"useData":true});
+
+/***/ }),
+
+/***/ 5645:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
 
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/jquery-npm-3.7.1-eeeac0f21e-10c0.zip/node_modules/jquery/dist/jquery.js
-var jquery = __webpack_require__(2910);
+// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+var jquery = __webpack_require__(4692);
 var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/handlebars-npm-4.7.8-25244c2c82-10c0.zip/node_modules/handlebars/runtime.js
-var runtime = __webpack_require__(3921);
+// EXTERNAL MODULE: ./node_modules/handlebars/runtime.js
+var runtime = __webpack_require__(3633);
 var runtime_default = /*#__PURE__*/__webpack_require__.n(runtime);
-// EXTERNAL MODULE: ../../../../../.yarn/berry/cache/window-handle-npm-1.0.1-369b8e9cbe-10c0.zip/node_modules/window-handle/index.js
-var window_handle = __webpack_require__(4903);
-;// CONCATENATED MODULE: ./src/main/js/util/jenkins.js
+// EXTERNAL MODULE: ./node_modules/window-handle/index.js
+var window_handle = __webpack_require__(7450);
+;// ./src/main/js/util/jenkins.js
 /**
  * Jenkins JS Modules common utility functions
  */
@@ -258,7 +487,7 @@ jenkins.staplerPost = function (url, $form, success, options) {
   }, options));
 };
 /* harmony default export */ var util_jenkins = (jenkins);
-;// CONCATENATED MODULE: ./src/main/js/api/pluginManager.js
+;// ./src/main/js/api/pluginManager.js
 /**
  * Provides a wrapper to interact with the plugin manager & update center
  */
@@ -572,7 +801,7 @@ pluginManager.restartJenkins = function (handler) {
   });
 };
 /* harmony default export */ var api_pluginManager = (pluginManager);
-;// CONCATENATED MODULE: ./src/main/js/api/securityConfig.js
+;// ./src/main/js/api/securityConfig.js
 
 
 
@@ -621,8 +850,8 @@ function saveProxy($form, success, error) {
   saveProxy: saveProxy
 });
 // EXTERNAL MODULE: ./src/main/js/handlebars-helpers/id.js
-var id = __webpack_require__(6600);
-;// CONCATENATED MODULE: ./src/main/js/plugin-setup-wizard/bootstrap-detached.js
+var id = __webpack_require__(3255);
+;// ./src/main/js/plugin-setup-wizard/bootstrap-detached.js
 
 
 /**
@@ -1593,48 +1822,48 @@ function enhanceJQueryWithBootstrap($) {
   }
 }
 // EXTERNAL MODULE: ./src/main/js/templates/errorPanel.hbs
-var errorPanel = __webpack_require__(4172);
+var errorPanel = __webpack_require__(7045);
 var errorPanel_default = /*#__PURE__*/__webpack_require__.n(errorPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/loadingPanel.hbs
-var loadingPanel = __webpack_require__(1442);
+var loadingPanel = __webpack_require__(2959);
 var loadingPanel_default = /*#__PURE__*/__webpack_require__.n(loadingPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/welcomePanel.hbs
-var welcomePanel = __webpack_require__(8302);
+var welcomePanel = __webpack_require__(5415);
 var welcomePanel_default = /*#__PURE__*/__webpack_require__.n(welcomePanel);
 // EXTERNAL MODULE: ./src/main/js/templates/progressPanel.hbs
-var progressPanel = __webpack_require__(4723);
+var progressPanel = __webpack_require__(5900);
 var progressPanel_default = /*#__PURE__*/__webpack_require__.n(progressPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/successPanel.hbs
-var successPanel = __webpack_require__(1549);
+var successPanel = __webpack_require__(4356);
 var successPanel_default = /*#__PURE__*/__webpack_require__.n(successPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/pluginSelectionPanel.hbs
-var pluginSelectionPanel = __webpack_require__(793);
+var pluginSelectionPanel = __webpack_require__(5932);
 var pluginSelectionPanel_default = /*#__PURE__*/__webpack_require__.n(pluginSelectionPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/setupCompletePanel.hbs
-var setupCompletePanel = __webpack_require__(5848);
+var setupCompletePanel = __webpack_require__(9445);
 var setupCompletePanel_default = /*#__PURE__*/__webpack_require__.n(setupCompletePanel);
 // EXTERNAL MODULE: ./src/main/js/templates/proxyConfigPanel.hbs
-var proxyConfigPanel = __webpack_require__(4884);
+var proxyConfigPanel = __webpack_require__(1377);
 var proxyConfigPanel_default = /*#__PURE__*/__webpack_require__.n(proxyConfigPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/firstUserPanel.hbs
-var firstUserPanel = __webpack_require__(1547);
+var firstUserPanel = __webpack_require__(9850);
 var firstUserPanel_default = /*#__PURE__*/__webpack_require__.n(firstUserPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/configureInstance.hbs
-var configureInstance = __webpack_require__(948);
+var configureInstance = __webpack_require__(4980);
 var configureInstance_default = /*#__PURE__*/__webpack_require__.n(configureInstance);
 // EXTERNAL MODULE: ./src/main/js/templates/offlinePanel.hbs
-var offlinePanel = __webpack_require__(6949);
+var offlinePanel = __webpack_require__(6044);
 var offlinePanel_default = /*#__PURE__*/__webpack_require__.n(offlinePanel);
 // EXTERNAL MODULE: ./src/main/js/templates/pluginSetupWizard.hbs
-var pluginSetupWizard = __webpack_require__(3895);
+var pluginSetupWizard = __webpack_require__(8272);
 var pluginSetupWizard_default = /*#__PURE__*/__webpack_require__.n(pluginSetupWizard);
 // EXTERNAL MODULE: ./src/main/js/templates/incompleteInstallationPanel.hbs
-var incompleteInstallationPanel = __webpack_require__(1560);
+var incompleteInstallationPanel = __webpack_require__(1627);
 var incompleteInstallationPanel_default = /*#__PURE__*/__webpack_require__.n(incompleteInstallationPanel);
 // EXTERNAL MODULE: ./src/main/js/templates/pluginSelectList.hbs
-var pluginSelectList = __webpack_require__(6189);
+var pluginSelectList = __webpack_require__(5928);
 var pluginSelectList_default = /*#__PURE__*/__webpack_require__.n(pluginSelectList);
-;// CONCATENATED MODULE: ./src/main/js/pluginSetupWizardGui.js
+;// ./src/main/js/pluginSetupWizardGui.js
 
 
 
@@ -1904,6 +2133,7 @@ var createPluginSetupWizard = function (appendTarget) {
         if (document.activeElement !== e) {
           e.focus();
         }
+        // eslint-disable-next-line no-unused-vars
       } catch (ex) {
         // ignored, unable to restore focus
       }
@@ -2937,7 +3167,7 @@ var createPluginSetupWizard = function (appendTarget) {
 /* harmony default export */ var pluginSetupWizardGui = ({
   init: createPluginSetupWizard
 });
-;// CONCATENATED MODULE: ./src/main/js/pluginSetupWizard.js
+;// ./src/main/js/pluginSetupWizard.js
 
 // This is the main module
 
@@ -2955,90 +3185,10 @@ jquery_default()(function () {
 
 /***/ }),
 
-/***/ 948:
+/***/ 5900:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {}), alias4=container.hooks.helperMissing, alias5="function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_addFirstUser_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"jumbotron welcome-panel security-panel\">\n		"
-    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"message") || (depth0 != null ? lookupProperty(depth0,"message") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"message","hash":{},"data":data,"loc":{"start":{"line":6,"column":2},"end":{"line":6,"column":15}}}) : helper))) != null ? stack1 : "")
-    + "\n\n		<iframe src=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":8,"column":15},"end":{"line":8,"column":26}}}) : helper)))
-    + "/setupWizard/setupWizardConfigureInstance\" id=\"setup-configure-instance\"></iframe>\n	</div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link skip-configure-instance\" disabled>\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipConfigureInstance") : stack1), depth0))
-    + "\n    </button>\n	<button type=\"button\" class=\"btn btn-primary save-configure-instance\" disabled>\n		"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_saveConfigureInstance") : stack1), depth0))
-    + "\n	</button>\n</div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 4172:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_error_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"container error-container\" id=\"error-message\">\n		<h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_error_header") : stack1), depth0))
-    + "</h1>\n		<div class=\"alert alert-danger fade in\">\n			"
-    + alias2(((helper = (helper = lookupProperty(helpers,"errorMessage") || (depth0 != null ? lookupProperty(depth0,"errorMessage") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"errorMessage","hash":{},"data":data,"loc":{"start":{"line":8,"column":3},"end":{"line":8,"column":19}}}) : helper)))
-    + "\n		</div>\n	</div>\n</div>\n<div class=\"modal-footer\">\n	<button type=\"button\" class=\"btn btn-primary start-over\">\n		"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
-    + "\n	</button>\n</div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 1547:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_addFirstUser_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body setup-wizard-heading\">\n	<div class=\"jumbotron welcome-panel security-panel\">\n		<iframe src=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":6,"column":15},"end":{"line":6,"column":26}}}) : helper)))
-    + "/setupWizard/setupWizardFirstUser\" id=\"setup-first-user\"></iframe>\n	</div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link skip-first-user\" disabled>\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipFirstUser") : stack1), depth0))
-    + "\n    </button>\n	<button type=\"button\" class=\"btn btn-primary save-first-user\" disabled>\n		"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_saveFirstUser") : stack1), depth0))
-    + "\n	</button>\n</div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 1560:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -3049,11 +3199,13 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "		<div class=\"selected-plugin "
-    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":12,"column":30},"end":{"line":12,"column":47}}}) : helper)))
-    + "\" data-name=\""
-    + alias4(__default(__webpack_require__(6600)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":12,"column":60},"end":{"line":12,"column":71}}}))
+    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":16,"column":30},"end":{"line":16,"column":47}}}) : helper)))
+    + "\" id=\"installing-"
+    + alias4(__default(__webpack_require__(3255)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":16,"column":64},"end":{"line":16,"column":75}}}))
+    + "\" data-tooltip=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"errorMessage") || (depth0 != null ? lookupProperty(depth0,"errorMessage") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"errorMessage","hash":{},"data":data,"loc":{"start":{"line":16,"column":91},"end":{"line":16,"column":107}}}) : helper)))
     + "\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":12,"column":73},"end":{"line":12,"column":82}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":16,"column":109},"end":{"line":16,"column":118}}}) : helper)))
     + "</div>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -3064,65 +3216,24 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"jumbotron welcome-panel success-panel\">\n		<h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_banner") : stack1), depth0))
-    + "</h1>\n		<p>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_message") : stack1), depth0))
-    + "</p>\n	</div>\n\n	<div class=\"selected-plugin-progress success-panel\">\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":11,"column":2},"end":{"line":13,"column":11}}})) != null ? stack1 : "")
-    + "	</div>\n</div>\n<div class=\"modal-footer\">\n	<button type=\"button\" class=\"btn btn-link install-home\">\n		"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_goBack") : stack1), depth0))
-    + "\n	</button>\n	<button type=\"button\" class=\"btn btn-primary resume-installation\">\n		"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installIncomplete_resumeInstallationButtonLabel") : stack1), depth0))
-    + "\n	</button>\n</div>";
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body installing-body\">\n	<div class=\"jumbotron welcome-panel installing-panel\">\n		<h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
+    + "</h1>\n		<div class=\"progress\">\n		  <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 0%;\">\n		    <span class=\"sr-only\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
+    + "</span>\n		  </div>\n		</div>\n	</div>\n\n	<div class=\"selected-plugin-progress\">\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":15,"column":2},"end":{"line":17,"column":11}}})) != null ? stack1 : "")
+    + "	</div>\n\n	<div class=\"install-console\">\n	  <div class=\"install-console-scroll\">\n	    <div class=\"install-text\"></div>\n	  </div>\n	  <div class=\"dependency-legend\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installingConsole_dependencyIndicatorNote") : stack1), depth0))
+    + "</div>\n	</div>\n</div>\n";
 },"useData":true});
 
 /***/ }),
 
-/***/ 1442:
+/***/ 5928:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"loader\"></div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 6949:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel offline\">\n        <h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_title") : stack1), depth0))
-    + "</h1>\n        <p>"
-    + ((stack1 = alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_message") : stack1), depth0)) != null ? stack1 : "")
-    + "</p>\n        <p>\n            <button type=\"button\" class=\"btn btn-primary show-proxy-config\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_label") : stack1), depth0))
-    + "</button>\n            <button type=\"button\" class=\"btn btn-primary skip-plugin-installs\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipPluginInstallations") : stack1), depth0))
-    + "</button>\n        </p>\n    </div>\n</div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 6189:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -3133,7 +3244,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "<h2 id=\""
-    + alias2(__default(__webpack_require__(6600)).call(alias1,(data && lookupProperty(data,"key")),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":2,"column":8},"end":{"line":2,"column":19}}}))
+    + alias2(__default(__webpack_require__(3255)).call(alias1,(data && lookupProperty(data,"key")),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":2,"column":8},"end":{"line":2,"column":19}}}))
     + "\" class=\"expanded\">"
     + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":2,"column":38},"end":{"line":2,"column":46}}}) : helper)))
     + " "
@@ -3150,7 +3261,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "  <div class=\"plugin "
-    + alias2(__default(__webpack_require__(6600)).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"plugin") : depth0)) != null ? lookupProperty(stack1,"name") : stack1),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":5,"column":21},"end":{"line":5,"column":39}}}))
+    + alias2(__default(__webpack_require__(3255)).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"plugin") : depth0)) != null ? lookupProperty(stack1,"name") : stack1),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":5,"column":21},"end":{"line":5,"column":39}}}))
     + " "
     + ((stack1 = lookupProperty(helpers,"inSelectedPlugins").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"plugin") : depth0)) != null ? lookupProperty(stack1,"name") : stack1),{"name":"inSelectedPlugins","hash":{},"fn":container.program(3, data, 0, blockParams, depths),"inverse":container.noop,"data":data,"loc":{"start":{"line":5,"column":40},"end":{"line":5,"column":104}}})) != null ? stack1 : "")
     + " "
@@ -3242,16 +3353,16 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 793:
+/***/ 5932:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.escapeExpression;
 
   return "    <li><a href=\"#"
-    + alias1(__default(__webpack_require__(6600)).call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":8,"column":18},"end":{"line":8,"column":29}}}))
+    + alias1(__default(__webpack_require__(3255)).call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":8,"column":18},"end":{"line":8,"column":29}}}))
     + "\" class=\"select-category\">"
     + alias1(container.lambda(depth0, depth0))
     + "</a></li>\n";
@@ -3285,7 +3396,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + "\n      </span>\n    </div>\n        <div class=\"plugin-list\">\n            <div class=\"plugin-list-description\">"
     + ((stack1 = alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installCustom_pluginListDesc") : stack1), depth0)) != null ? stack1 : "")
     + "</div>\n"
-    + ((stack1 = container.invokePartial(__webpack_require__(6189),depth0,{"name":"pluginSelectList","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
+    + ((stack1 = container.invokePartial(__webpack_require__(5928),depth0,{"name":"pluginSelectList","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "    </div>\n  </div>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-link install-home\">\n    "
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_goBack") : stack1), depth0))
     + "\n  </button>\n  <button type=\"button\" class=\"btn btn-primary install-selected\">\n    "
@@ -3295,40 +3406,12 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 3895:
+/***/ 6044:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"plugin-setup-wizard bootstrap-3\">\n	<div class=\"modal fade in\" style=\"display: block;\">\n		<div class=\"modal-dialog\">\n			<div class=\"modal-content\"></div>\n		</div>\n	</div>\n</div>";
-},"useData":true});
-
-/***/ }),
-
-/***/ 4723:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "		<div class=\"selected-plugin "
-    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":16,"column":30},"end":{"line":16,"column":47}}}) : helper)))
-    + "\" id=\"installing-"
-    + alias4(__default(__webpack_require__(6600)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":16,"column":64},"end":{"line":16,"column":75}}}))
-    + "\" data-tooltip=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"errorMessage") || (depth0 != null ? lookupProperty(depth0,"errorMessage") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"errorMessage","hash":{},"data":data,"loc":{"start":{"line":16,"column":91},"end":{"line":16,"column":107}}}) : helper)))
-    + "\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":16,"column":109},"end":{"line":16,"column":118}}}) : helper)))
-    + "</div>\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -3336,25 +3419,72 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body installing-body\">\n	<div class=\"jumbotron welcome-panel installing-panel\">\n		<h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
-    + "</h1>\n		<div class=\"progress\">\n		  <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 0%;\">\n		    <span class=\"sr-only\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installing_title") : stack1), depth0))
-    + "</span>\n		  </div>\n		</div>\n	</div>\n\n	<div class=\"selected-plugin-progress\">\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":15,"column":2},"end":{"line":17,"column":11}}})) != null ? stack1 : "")
-    + "	</div>\n\n	<div class=\"install-console\">\n	  <div class=\"install-console-scroll\">\n	    <div class=\"install-text\"></div>\n	  </div>\n	  <div class=\"dependency-legend\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_installingConsole_dependencyIndicatorNote") : stack1), depth0))
-    + "</div>\n	</div>\n</div>\n";
+  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel offline\">\n        <h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_title") : stack1), depth0))
+    + "</h1>\n        <p>"
+    + ((stack1 = alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_offline_message") : stack1), depth0)) != null ? stack1 : "")
+    + "</p>\n        <p>\n            <button type=\"button\" class=\"btn btn-primary show-proxy-config\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_label") : stack1), depth0))
+    + "</button>\n            <button type=\"button\" class=\"btn btn-primary skip-plugin-installs\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipPluginInstallations") : stack1), depth0))
+    + "</button>\n        </p>\n    </div>\n</div>\n";
 },"useData":true});
 
 /***/ }),
 
-/***/ 4884:
+/***/ 6858:
+/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5072);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7825);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7659);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5056);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(540);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1113);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5141);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6__);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default()), options);
+
+
+
+
+       /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default()) && (_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) ? (_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) : undefined);
+
+
+/***/ }),
+
+/***/ 7045:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -3364,23 +3494,34 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,"
         return undefined
     };
 
-  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_label") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel security-panel\">\n        <iframe src=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":6,"column":21},"end":{"line":6,"column":32}}}) : helper)))
-    + "/setupWizard/proxy-configuration\"></iframe>\n    </div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link install-home\">\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_goBack") : stack1), depth0))
-    + "\n    </button>\n    <button type=\"button\" class=\"btn btn-primary save-proxy-config\" disabled>\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_configureProxy_save") : stack1), depth0))
-    + "\n    </button>\n</div>\n";
+  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_error_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body\">\n	<div class=\"container error-container\" id=\"error-message\">\n		<h1>"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_error_header") : stack1), depth0))
+    + "</h1>\n		<div class=\"alert alert-danger fade in\">\n			"
+    + alias2(((helper = (helper = lookupProperty(helpers,"errorMessage") || (depth0 != null ? lookupProperty(depth0,"errorMessage") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"errorMessage","hash":{},"data":data,"loc":{"start":{"line":8,"column":3},"end":{"line":8,"column":19}}}) : helper)))
+    + "\n		</div>\n	</div>\n</div>\n<div class=\"modal-footer\">\n	<button type=\"button\" class=\"btn btn-primary start-over\">\n		"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
+    + "\n	</button>\n</div>\n";
 },"useData":true});
 
 /***/ }),
 
-/***/ 5848:
+/***/ 8272:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"plugin-setup-wizard bootstrap-3\">\n	<div class=\"modal fade in\" style=\"display: block;\">\n		<div class=\"modal-dialog\">\n			<div class=\"modal-content\"></div>\n		</div>\n	</div>\n</div>";
+},"useData":true});
+
+/***/ }),
+
+/***/ 9445:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -3471,171 +3612,29 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 1549:
+/***/ 9850:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var Handlebars = __webpack_require__(3921);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "        <p>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_pluginInstallFailure_message") : stack1), depth0))
-    + "</p>\n        <button type=\"button\" class=\"btn btn-primary retry-failed-plugins\">\n            "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
-    + "\n        </button>\n";
-},"3":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "        <div class=\"selected-plugin "
-    + alias4(((helper = (helper = lookupProperty(helpers,"installStatus") || (depth0 != null ? lookupProperty(depth0,"installStatus") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"installStatus","hash":{},"data":data,"loc":{"start":{"line":18,"column":36},"end":{"line":18,"column":53}}}) : helper)))
-    + "\" data-name=\""
-    + alias4(__default(__webpack_require__(6600)).call(alias1,(depth0 != null ? lookupProperty(depth0,"name") : depth0),{"name":"id","hash":{},"data":data,"loc":{"start":{"line":18,"column":66},"end":{"line":18,"column":77}}}))
-    + "\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":18,"column":79},"end":{"line":18,"column":88}}}) : helper)))
-    + "</div>\n";
-},"5":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "    <button type=\"button\" class=\"btn btn-link continue-with-failed-plugins\">\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_continue") : stack1), depth0))
-    + "\n    </button>\n    <button type=\"button\" class=\"btn btn-primary retry-failed-plugins\">\n        "
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_retry") : stack1), depth0))
-    + "\n    </button>\n";
-},"7":function(container,depth0,helpers,partials,data) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "    <button type=\"button\" class=\"btn btn-primary continue-with-failed-plugins\">\n        "
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_continue") : stack1), depth0))
-    + "\n    </button>\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body\">\n    <div class=\"jumbotron welcome-panel success-panel\">\n        <h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_pluginInstallFailure_title") : stack1), depth0))
-    + "</h1>\n\n"
-    + ((stack1 = lookupProperty(helpers,"if").call(alias3,(depth0 != null ? lookupProperty(depth0,"failedPlugins") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":8,"column":8},"end":{"line":13,"column":15}}})) != null ? stack1 : "")
-    + "    </div>\n\n    <div class=\"selected-plugin-progress success-panel\">\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias3,(depth0 != null ? lookupProperty(depth0,"installingPlugins") : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":17,"column":8},"end":{"line":19,"column":17}}})) != null ? stack1 : "")
-    + "    </div>\n</div>\n<div class=\"modal-footer\">\n"
-    + ((stack1 = lookupProperty(helpers,"if").call(alias3,(depth0 != null ? lookupProperty(depth0,"failedPlugins") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":23,"column":4},"end":{"line":34,"column":11}}})) != null ? stack1 : "")
-    + "</div>\n";
-},"useData":true});
-
-/***/ }),
-
-/***/ 8302:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(3921);
+var Handlebars = __webpack_require__(3633);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "<div class=\"modal-header closeable\">\n	<h4 class=\"modal-title\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_title") : stack1), depth0))
-    + "</h4>\n</div>\n<div class=\"modal-body setup-wizard-heading\">\n  <div class=\"jumbotron welcome-panel\">\n		 <h1>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_banner") : stack1), depth0))
-    + "</h1>\n	<p>\n			"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_message") : stack1), depth0))
-    + "\n		</p>\n		<p class=\"button-set\">\n			<a class=\"btn btn-primary btn-lg btn-huge install-recommended\" href=\"#\" role=\"button\">\n				<b>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_recommendedActionTitle") : stack1), depth0))
-    + "</b>\n				<sub>\n					"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_recommendedActionDetails") : stack1), depth0))
-    + "\n				</sub>\n			</a>\n\n			<a class=\"btn btn-default btn-lg btn-huge install-custom\" href=\"#\" role=\"button\">\n				<b>"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_customizeActionTitle") : stack1), depth0))
-    + "</b>\n				<sub>\n					"
-    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_welcomePanel_customizeActionDetails") : stack1), depth0))
-    + "\n				</sub>\n			</a>\n		</p>\n	</div>\n\n</div>\n";
+  return "<div class=\"modal-header\">\n	<h4 class=\"modal-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_addFirstUser_title") : stack1), depth0))
+    + "</h4>\n</div>\n<div class=\"modal-body setup-wizard-heading\">\n	<div class=\"jumbotron welcome-panel security-panel\">\n		<iframe src=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"baseUrl") || (depth0 != null ? lookupProperty(depth0,"baseUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"baseUrl","hash":{},"data":data,"loc":{"start":{"line":6,"column":15},"end":{"line":6,"column":26}}}) : helper)))
+    + "/setupWizard/setupWizardFirstUser\" id=\"setup-first-user\"></iframe>\n	</div>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-link skip-first-user\" disabled>\n        "
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_skipFirstUser") : stack1), depth0))
+    + "\n    </button>\n	<button type=\"button\" class=\"btn btn-primary save-first-user\" disabled>\n		"
+    + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"translations") : depth0)) != null ? lookupProperty(stack1,"installWizard_saveFirstUser") : stack1), depth0))
+    + "\n	</button>\n</div>\n";
 },"useData":true});
-
-/***/ }),
-
-/***/ 990:
-/***/ (function() {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 2528:
-/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5219);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6328);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1060);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5139);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1127);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9828);
-/* harmony import */ var _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(990);
-/* harmony import */ var _yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6__);
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_style_loader_npm_3_3_4_e2ff5c12be_10c0_zip_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default()), options);
-
-
-
-
-       /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((_yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default()) && (_yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) ? (_yarn_virtual_mini_css_extract_plugin_virtual_c1413d13cd_6_yarn_berry_cache_mini_css_extract_plugin_npm_2_8_1_5f239540c1_10c0_zip_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_0_use_1_yarn_virtual_css_loader_virtual_827be28a51_6_yarn_berry_cache_css_loader_npm_6_10_0_5561e0c62e_10c0_zip_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_yarn_virtual_postcss_loader_virtual_6183964b6b_6_yarn_berry_cache_postcss_loader_npm_8_1_1_20cf547c92_10c0_zip_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_3_yarn_virtual_sass_loader_virtual_c998ad7265_6_yarn_berry_cache_sass_loader_npm_14_1_1_4e73d67b06_10c0_zip_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_4_pluginSetupWizard_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) : undefined);
-
 
 /***/ })
 
@@ -3825,8 +3824,8 @@ var update = _yarn_virtual_style_loader_virtual_33a60f822e_6_yarn_berry_cache_st
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, [96], function() { return __webpack_require__(8567); })
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [96], function() { return __webpack_require__(2528); })
+/******/ 	__webpack_require__.O(undefined, [96], function() { return __webpack_require__(5645); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [96], function() { return __webpack_require__(6858); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
