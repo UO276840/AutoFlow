@@ -13,7 +13,7 @@ Este repositorio agrupa la infraestructura y los proyectos necesarios para un **
 - **Proyectos de ejemplo**  
   - **Spring Boot** (`SpringPMA/`)  
   - **Node.js** (`TodoListNodeJs/`)  
-  - **.NET 6** (`TiendaNET/`)  
+  - **.NET 8** (`TiendaNET/`)  
 
 - **Plugin**  
   - `SlackNotificationPlugin/`: plugin Jenkins para notificaciones a Slack  
