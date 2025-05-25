@@ -22,3 +22,6 @@ Este repositorio agrupa la infraestructura y los proyectos necesarios para un **
 - **Orquestación**  
   - `DockerContainers/docker-compose.yml`: define y arranca todo el stack de servicios de la infraestructura
   - `DockerContainers/docker-compose-selenoid.yml`: define y arranca todo el stack de servicios de selenoid
+
+## Referencias
+- [Librería Jenkins](https://github.com/UO276840/jenkins_lib)

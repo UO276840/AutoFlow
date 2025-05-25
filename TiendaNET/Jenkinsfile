@@ -15,10 +15,17 @@ pipeline {
     stages {
         stage('Restore Dependencies') {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    script {
-                        sh 'dotnet restore ./TiendaOnline'
-                        sh 'dotnet restore ./TestTiendaOnline'
+                script{
+                    try{
+                        timeout(time: 10, unit: 'MINUTES') {
+                            script {
+                                sh 'dotnet restore ./TiendaOnline'
+                                sh 'dotnet restore ./TestTiendaOnline'
+                            }
+                        }
+                    }catch (Exception e) {
+                         env.FAILED_STAGE = "Restore Dependencies"
+                         throw e
                     }
                 }
             }
@@ -30,16 +37,23 @@ pipeline {
         }
         stage('Build') {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    script {
-                        def buildOutput = sh(script: 'dotnet build ./TiendaOnline --configuration Release', returnStdout: true).trim()
-                        def buildOutputTest = sh(script: 'dotnet build ./TestTiendaOnline --configuration Release', returnStdout: true).trim()
+                script {
+                    try {
+                        timeout(time: 10, unit: 'MINUTES') {
+                            script {
+                                def buildOutput = sh(script: 'dotnet build ./TiendaOnline --configuration Release', returnStdout: true).trim()
+                                def buildOutputTest = sh(script: 'dotnet build ./TestTiendaOnline --configuration Release', returnStdout: true).trim()
 
-                        if (buildOutput.contains("warning") || buildOutputTest.contains("warning")) {  
-                            echo "⚠ Se encontraron warnings en la compilación. Marcando UNSTABLE."
-                            currentBuild.result = 'UNSTABLE'
-                        } 
+                                if (buildOutput.contains("warning") || buildOutputTest.contains("warning")) {  
+                                    echo "⚠ Se encontraron warnings en la compilación. Marcando UNSTABLE."
+                                    currentBuild.result = 'UNSTABLE'
+                                } 
 
+                            }
+                        }
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Build"
+                        throw e
                     }
                 }
             }
@@ -57,9 +71,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    script {
-                        sh 'dotnet test ./TestTiendaOnline --configuration Release --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml'
+                script {
+                    try {
+                        timeout(time: 10, unit: 'MINUTES') {
+                            script {
+                                sh 'dotnet test ./TestTiendaOnline --configuration Release --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml'
+                            }
+                        }
+                    } catch (Exception e) {
+                         env.FAILED_STAGE = "Test"
+                         throw e
                     }
                 }
             }
@@ -70,13 +91,18 @@ pipeline {
                     timeout(time: 10, unit: 'MINUTES') {
                         withSonarQubeEnv('sonarqube') {
                             script {
-                                def scannerHome = tool 'SonaScanner.NetCore'
-                                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"TFG_NET\" /d:sonar.cs.opencover.reportsPaths=../TestTiendaOnline/TestResults/coverage.opencover.xml"
-                                sh 'dotnet build'
-                                sh 'dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/coverage.opencover.xml /p:CoverletOutputFormat=opencover'
-                                sh 'cat ../TestTiendaOnline/TestResults/coverage.opencover.xml'
-                                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
-                        }
+                                try {
+                                    def scannerHome = tool 'SonaScanner.NetCore'
+                                    sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"TFG_NET\" /d:sonar.cs.opencover.reportsPaths=../TestTiendaOnline/TestResults/coverage.opencover.xml"
+                                    sh 'dotnet build'
+                                    sh 'dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/coverage.opencover.xml /p:CoverletOutputFormat=opencover'
+                                    sh 'cat ../TestTiendaOnline/TestResults/coverage.opencover.xml'
+                                    sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+                                } catch (Exception e) {
+                                    env.FAILED_STAGE = "Sonar"
+                                    throw e
+                                }
+                            }
                         }
                     }
                 }
@@ -84,37 +110,59 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                sleep(10) // seconds
-                timeout(time: 4, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
+                script {
+                    try{
+                        sleep(10) // seconds
+                        timeout(time: 4, unit: 'MINUTES') {
+                            waitForQualityGate abortPipeline: true
+                        }
+                    } catch (Exception e) {
+                            env.FAILED_STAGE = "Quality gate"
+                            throw e
+                    }
                 }
             }
         }
         stage('Pack NuGet Package') {
             steps {
                 script {
-                    sh 'dotnet pack ./TiendaOnline -c Release -o ./nupkg'
+                    try{
+                        sh 'dotnet pack ./TiendaOnline -c Release -o ./nupkg'
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Pack NuGet Package"
+                        throw e
+                    }
                 }
             }
         }
         stage('Publish to NuGet') {
             steps {
                 script {
-                    sh 'dotnet nuget push ./nupkg/*.nupkg -k ${NUGET_API_KEY} -s https://api.nuget.org/v3/index.json --skip-duplicate'
+                    try{
+                        sh 'dotnet nuget push ./nupkg/*.nupkg -k ${NUGET_API_KEY} -s https://api.nuget.org/v3/index.json --skip-duplicate'
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Publish to NuGet"
+                        throw e
+                    }
                 }
             }
         }
          stage('Zip proyect') {
             steps {
                 script {
-                    sh 'dotnet publish ./TiendaOnline -c Release -o output/'
-                    sh '''
-                    cd output
-                    ls
-                    zip -r ../myapp.zip .
-                    cd ..
-                    ls -la myapp.zip
-                    '''
+                    try{
+                        sh 'dotnet publish ./TiendaOnline -c Release -o output/'
+                        sh '''
+                        cd output
+                        ls
+                        zip -r ../myapp.zip .
+                        cd ..
+                        ls -la myapp.zip
+                        '''
+                    } catch (Exception e) {
+                        env.FAILED_STAGE = "Zip proyect"
+                        throw e
+                    }
                 }
             }
         }
@@ -138,6 +186,21 @@ pipeline {
         }
     }
     post {
+        success {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                    channel: '#tfg',
+                                    message: '🎉 ¡La build fue exitosa!'
+        }
+        failure {
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                            channel: '#tfg',
+                                            message: "¡La pipeline ha fallado en el stage: *${env.FAILED_STAGE}*"
+        }
+        unstable {
+             simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+                                                    channel: '#tfg',
+                                                    message: '¡La build es inestable!'
+        }
         always {
             script{
                 timeout(time: 5, unit: 'MINUTES'){
