@@ -44,7 +44,7 @@ public class NotificationTest {
         lenient().when(mockConnection.getResponseCode()).thenReturn(200);
 
         try {
-            NotificationAction action = new NotificationAction("https://hooks.slack.com/services/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", "#general", "Test Message");
+            NotificationAction action = new NotificationAction("https://hooks.slack.com/services/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", "#general", "Test Message");
             assertNotNull(action);
         } catch (IOException e) {
             fail("Unexpected exception: " + e.getMessage());

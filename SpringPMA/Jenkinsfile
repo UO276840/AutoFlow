@@ -121,23 +121,23 @@ pipeline{
     }
     post {
         success {
-            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
                                 channel: '#tfg',
                                 message: '🎉 ¡La build fue exitosa!'
         }
         failure {
-            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
                                             channel: '#tfg',
                                             message: "La pipeline ha fallado en el stage: *${env.FAILED_STAGE}*"
         }
         unstable {
-            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
                                             channel: '#tfg',
                                             message: '¡La build es inestable!'
         }
         always {
             cleanUp()
-            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
+            simpleSlackNotifier webhookUrl: 'https://hooks.slack.com/services/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',
                                     channel: '#tfg',
                                     message: '¡La build ha finalizado!'
         }
